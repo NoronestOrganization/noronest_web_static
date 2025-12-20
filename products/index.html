@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NoroNest Services - Cognitive serious games, mobile applications, and clinical web panels for neuro-rehabilitation.">
+  <title>NoroNest - Services & Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../public/img/logo.png" alt="NoroNest Logo" onerror="this.style.display='none'">
+        <span>NoroNest</span>
+      </a>
+      
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+        <li><a href="../about/index.html" class="nav-link" data-i18n="nav_about">About Us</a></li>
+        <li><a href="index.html" class="nav-link active" data-i18n="nav_services">Services</a></li>
+        <li><a href="../team/index.html" class="nav-link" data-i18n="nav_team">Team</a></li>
+        <li><a href="../contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang="tr">TR</button>
+          <button class="lang-btn active" data-lang="en">EN</button>
+        </div>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html" data-i18n="nav_home">Home</a>
+        <span>/</span>
+        <span data-i18n="nav_services">Services</span>
+      </div>
+      <h1 data-i18n="services_page_title">Our Solutions</h1>
+      <p data-i18n="services_page_subtitle">Comprehensive digital solutions designed to support neuro-rehabilitation at every stage.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <div class="services-list">
+        
+        <!-- Preventive/Supportive Games -->
+        <a href="shopping_game.html" class="service-card reveal" id="games">
+          <div class="service-image">
+            <img src="../public/img/services/games.png" alt="Cognitive Games" onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:250px;background:linear-gradient(135deg,var(--primary-color),var(--primary-light));border-radius:var(--radius-medium);display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;\'>🎮</div>'">
+          </div>
+          <div class="service-content">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                <circle cx="12" cy="12" r="2"></circle>
+                <path d="M6 12h.01"></path>
+                <path d="M18 12h.01"></path>
+              </svg>
+              <span data-i18n="service_games_title">Preventive & Supportive Games</span>
+            </h3>
+            <p data-i18n="service_games_desc">
+              Engaging cognitive serious games designed to exercise and strengthen neural pathways. 
+              Our scientifically-validated games target memory, attention, executive function, and 
+              other cognitive domains crucial for brain health.
+            </p>
+            <div class="service-features">
+              <span data-i18n="feature_memory">Memory Training</span>
+              <span data-i18n="feature_attention">Attention Exercises</span>
+              <span data-i18n="feature_executive">Executive Function</span>
+              <span data-i18n="feature_adaptive">Adaptive Difficulty</span>
+            </div>
+            <span class="btn btn-secondary" data-i18n="service_explore">Explore Games →</span>
+          </div>
+        </a>
+
+        <!-- Mobile Application -->
+        <div class="service-card reveal" id="mobile">
+          <div class="service-content">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+              <span data-i18n="service_mobile_title">Mobile Application</span>
+            </h3>
+            <p data-i18n="service_mobile_desc">
+              Access your personalized neuro-rehabilitation program anytime, anywhere. Our mobile 
+              application provides seamless access to cognitive exercises, progress tracking, and 
+              communication with your healthcare team.
+            </p>
+            <div class="service-features">
+              <span data-i18n="feature_ios">iOS & Android</span>
+              <span data-i18n="feature_offline">Offline Mode</span>
+              <span data-i18n="feature_notifications">Smart Reminders</span>
+              <span data-i18n="feature_sync">Cloud Sync</span>
+            </div>
+            <span class="btn btn-secondary" data-i18n="service_coming_soon">Coming Soon</span>
+          </div>
+          <div class="service-image">
+            <img src="../public/img/services/mobile.png" alt="Mobile Application" onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:250px;background:linear-gradient(135deg,var(--secondary-color),var(--primary-color));border-radius:var(--radius-medium);display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;\'>📱</div>'">
+          </div>
+        </div>
+
+        <!-- Web Panel -->
+        <div class="service-card reveal" id="panel">
+          <div class="service-image">
+            <img src="../public/img/services/panel.png" alt="Web Panel" onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:250px;background:linear-gradient(135deg,var(--primary-light),var(--primary-color));border-radius:var(--radius-medium);display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;\'>💻</div>'">
+          </div>
+          <div class="service-content">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <span data-i18n="service_panel_title">Clinical Web Panel</span>
+            </h3>
+            <p data-i18n="service_panel_desc">
+              A comprehensive dashboard for healthcare professionals to monitor patient progress, 
+              customize treatment plans, and access detailed analytics. Our web panel provides 
+              actionable insights powered by machine learning algorithms.
+            </p>
+            <div class="service-features">
+              <span data-i18n="feature_analytics">Real-time Analytics</span>
+              <span data-i18n="feature_reports">Custom Reports</span>
+              <span data-i18n="feature_patients">Patient Management</span>
+              <span data-i18n="feature_ai">AI Insights</span>
+            </div>
+            <span class="btn btn-secondary" data-i18n="service_coming_soon">Coming Soon</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Overview -->
+  <section class="features-section" style="background-color: var(--bg-color);">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="services_features_title">Platform Features</h2>
+        <p data-i18n="services_features_subtitle">Built with cutting-edge technology to deliver the best neuro-rehabilitation experience.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card reveal delay-1">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <h4 data-i18n="platform_ai">AI-Powered Personalization</h4>
+          <p data-i18n="platform_ai_desc">Machine learning algorithms adapt exercises to each patient's unique cognitive profile.</p>
+        </div>
+        
+        <div class="feature-card reveal delay-2">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <h4 data-i18n="platform_tracking">Progress Tracking</h4>
+          <p data-i18n="platform_tracking_desc">Comprehensive metrics and visualizations to monitor cognitive improvements over time.</p>
+        </div>
+        
+        <div class="feature-card reveal delay-3">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h4 data-i18n="platform_security">Enterprise Security</h4>
+          <p data-i18n="platform_security_desc">HIPAA-compliant infrastructure with end-to-end encryption for patient data protection.</p>
+        </div>
+        
+        <div class="feature-card reveal delay-4">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <h4 data-i18n="platform_cloud">Cloud-Based Platform</h4>
+          <p data-i18n="platform_cloud_desc">Access from anywhere with automatic updates and seamless device synchronization.</p>
+        </div>
+        
+        <div class="feature-card reveal delay-5">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h4 data-i18n="platform_collaboration">Clinical Collaboration</h4>
+          <p data-i18n="platform_collaboration_desc">Tools for healthcare teams to coordinate care and share patient insights securely.</p>
+        </div>
+        
+        <div class="feature-card reveal delay-5">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h4 data-i18n="platform_reports">Detailed Reports</h4>
+          <p data-i18n="platform_reports_desc">Generate comprehensive reports for clinical documentation and insurance purposes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container reveal">
+      <h2 data-i18n="services_cta_title">Ready to Get Started?</h2>
+      <p data-i18n="services_cta_subtitle">Contact us to learn how NoroNest can support your neuro-rehabilitation needs.</p>
+      <a href="../contact.html" class="btn btn-white" data-i18n="cta_button">Schedule a Demo</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            <span>NoroNest</span>
+          </a>
+          <p data-i18n="footer_desc">AI-driven neuro-rehabilitation solutions for a healthier tomorrow.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4 data-i18n="footer_company">Company</h4>
+          <ul>
+            <li><a href="../about/index.html" data-i18n="nav_about">About Us</a></li>
+            <li><a href="../team/index.html" data-i18n="nav_team">Our Team</a></li>
+            <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4 data-i18n="footer_solutions">Solutions</h4>
+          <ul>
+            <li><a href="#games" data-i18n="service_games">Cognitive Games</a></li>
+            <li><a href="#mobile" data-i18n="service_mobile">Mobile App</a></li>
+            <li><a href="#panel" data-i18n="service_panel">Web Panel</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4 data-i18n="footer_legal">Legal</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
+            <li><a href="#" data-i18n="footer_terms">Terms of Service</a></li>
+            <li><a href="#" data-i18n="footer_cookies">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 NoroNest. <span data-i18n="footer_rights">All rights reserved.</span></p>
+        <div class="footer-bottom-links">
+          <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer_terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../index.js"></script>
+</body>
+</html>
