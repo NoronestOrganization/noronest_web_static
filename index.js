@@ -92,11 +92,18 @@ const translations = {
     team_cta_title: "Join Our Team",
     team_cta_subtitle: "We're always looking for talented individuals passionate about making a difference in healthcare.",
     team_cta_button: "Get in Touch",
-    
+    team_category_management: "Management",
+    team_category_software: "Software Development Team",
+    team_category_clinical: "Clinical Team",
+    team_category_ml: "Machine Learning Team",
+    software_team_category_title: "Yazılım Ekibi",
+    management_team_category_title: "Yönetim",
+    clinical_team_category_title: "Klinil Ekip",
+    machine_learning_team_category_title: "Makine Öğrenmesi Ekibi",
+
+
     // Profile Page
     profile_skills: "Skills & Technologies",
-    cihangir_bio: "Cihangir is a passionate backend developer with expertise in building scalable, secure, and high-performance systems. At NoroNest, he focuses on developing the core infrastructure that powers our AI-driven neuro-rehabilitation platform.",
-    cihangir_bio_2: "With a strong foundation in modern backend technologies and cloud architecture, Cihangir ensures that our platform delivers reliable and seamless experiences for healthcare providers and patients alike.",
     profile_cta_title: "Want to Work Together?",
     profile_cta_subtitle: "Get in touch with our team to learn more about collaboration opportunities.",
     
@@ -274,11 +281,17 @@ const translations = {
     team_cta_title: "Ekibimize Katılın",
     team_cta_subtitle: "Sağlık alanında fark yaratmaya tutkulu yetenekli bireyler arıyoruz.",
     team_cta_button: "İletişime Geç",
-    
+    team_category_management: "Yönetim",
+    team_category_software: "Yazılım Geliştirme Ekibi",
+    team_category_clinical: "Klinik Ekip",
+    team_category_ml: "Makine Öğrenmesi Ekibi",
+    software_team_category_title: "Yazılım Ekibi",
+    management_team_category_title: "Yönetim",
+    clinical_team_category_title: "Klinil Ekip",
+    machine_learning_team_category_title: "Makine Öğrenmesi Ekibi",
+
     // Profile Page
     profile_skills: "Yetenekler ve Teknolojiler",
-    cihangir_bio: "Cihangir, ölçeklenebilir, güvenli ve yüksek performanslı sistemler oluşturma konusunda uzmanlığa sahip tutkulu bir backend geliştiricidir. NoroNest'te, yapay zeka destekli nöro-rehabilitasyon platformumuza güç veren temel altyapının geliştirilmesine odaklanmaktadır.",
-    cihangir_bio_2: "Modern backend teknolojileri ve bulut mimarisi konusunda güçlü bir temele sahip olan Cihangir, platformumuzun sağlık hizmeti sağlayıcıları ve hastalar için güvenilir ve sorunsuz deneyimler sunmasını sağlar.",
     profile_cta_title: "Birlikte Çalışmak İster misiniz?",
     profile_cta_subtitle: "İşbirliği fırsatları hakkında daha fazla bilgi edinmek için ekibimizle iletişime geçin.",
     

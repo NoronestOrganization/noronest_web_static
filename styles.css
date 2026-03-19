@@ -1330,6 +1330,10 @@ section {
     text-align: center;
   }
   
+  .hero::before {
+    display: none;
+  }
+
   .hero-content {
     max-width: 100%;
   }
