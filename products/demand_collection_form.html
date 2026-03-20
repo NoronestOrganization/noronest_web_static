@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
       background-color: var(--bg-color);
       padding: 80px 0;
     }
+
     .noronest-form-container {
       background-color: var(--bg-light);
       padding: 40px;
@@ -22,43 +24,52 @@
       max-width: 800px;
       margin: 0 auto;
     }
+
     .noronest-form-container h2 {
       margin-bottom: 24px;
       color: var(--primary-color);
       text-align: center;
     }
-    .noronest-form-container > p {
+
+    .noronest-form-container>p {
       margin-bottom: 40px;
       color: var(--text-light);
       font-size: 1.1rem;
       text-align: center;
     }
+
     .noronest-form-container fieldset {
       border: none;
       margin-bottom: 32px;
       padding-bottom: 24px;
       border-bottom: 1px solid var(--border-color);
     }
+
     .q4-hidden {
       display: none !important;
     }
+
     .q4-visible {
       display: block;
       animation: fadeInQ4 0.5s ease-in-out;
     }
+
     @keyframes fadeInQ4 {
       from {
         opacity: 0;
         transform: translateY(-10px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
     .noronest-form-container fieldset:last-of-type {
       border-bottom: none;
     }
+
     .noronest-form-container legend {
       font-weight: 600;
       color: var(--secondary-color);
@@ -66,6 +77,7 @@
       font-size: 1.1rem;
       line-height: 1.4;
     }
+
     .noronest-form-container label {
       display: flex;
       align-items: center;
@@ -75,6 +87,7 @@
       color: var(--text-color);
       font-weight: 500;
     }
+
     .noronest-form-container input[type="text"],
     .noronest-form-container input[type="number"],
     .noronest-form-container input[type="email"],
@@ -90,12 +103,14 @@
       background-color: var(--bg-color);
       margin-top: 8px;
     }
+
     .noronest-form-container input:focus,
     .noronest-form-container textarea:focus {
       outline: none;
       border-color: var(--primary-color);
       background-color: var(--bg-light);
     }
+
     .noronest-form-container input[type="radio"],
     .noronest-form-container input[type="checkbox"] {
       width: 20px;
@@ -103,12 +118,14 @@
       accent-color: var(--primary-color);
       flex-shrink: 0;
     }
+
     .noronest-form-container .rating-container {
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
       margin-top: 12px;
     }
+
     .noronest-form-container .rating-container label {
       flex-direction: column;
       justify-content: center;
@@ -116,6 +133,7 @@
       margin-bottom: 0;
       font-size: 0.95rem;
     }
+
     .noronest-form-container h3 {
       margin-top: 40px;
       margin-bottom: 16px;
@@ -123,21 +141,26 @@
       border-bottom: 2px solid var(--primary-light);
       padding-bottom: 8px;
     }
-    #loading-message, #success-message {
+
+    #loading-message,
+    #success-message {
       margin-top: 24px;
       padding: 16px;
       border-radius: var(--radius-small);
       text-align: center;
       font-weight: 600;
     }
+
     #loading-message {
       background-color: var(--bg-color);
       color: var(--primary-color);
     }
+
     #success-message {
       background-color: #e6f4ea;
       color: #1e8e3e;
     }
+
     #submit-btn {
       width: auto;
       min-width: 200px;
@@ -155,24 +178,27 @@
       color: #ffffff;
       margin: 0 auto;
     }
+
     #submit-btn:hover {
       background-color: var(--secondary-color);
       border-color: var(--secondary-color);
       transform: translateY(-2px);
       box-shadow: 0 10px 30px rgba(126, 167, 228, 0.1);
     }
+
     .form-submit-wrapper {
       text-align: center;
       margin-top: 40px;
     }
   </style>
 </head>
+
 <body>
   <nav class="navbar">
     <div class="container">
       <a href="../index.html" class="nav-logo">
-        <img src="../public/img/logo.png" alt="NoroNest Logo" onerror="this.style.display='none'">
-        <span>NoroNest</span>
+        <img src="../public/img/Nöronest logo.png" alt="NöroNest Logo" onerror="this.style.display='none'">
+        <span>NöroNest</span>
       </a>
       <ul class="nav-menu">
         <li><a href="../index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
@@ -210,337 +236,391 @@
   <section class="demand-form-section">
     <div class="container">
       <div class="noronest-form-container">
-  <p style="text-align: left;">
-    Merhaba, NöroNest olarak Alzheimer hastalarına yönelik bilişsel süreçleri desteklemeyi amaçlayan 2D/3D oyun tabanlı dijital uygulamalar ve bir frekans cihazı geliştiriyoruz. Geliştirdiğimiz uygulamaların etkilerini incelemek amacıyla klinik çalışmalar yürütüyoruz.
-    <br><br>
-    Bu form aracılığıyla, geliştirme sürecinde olduğumuz ürünleri pazarda daha doğru konumlandırabilmek için sizlerden geri bildirim almayı hedefliyoruz.
-<br><br>
-Formun son kısmında yer alan kişisel bilgileri doldurmak zorunlu değildir; ancak ürün demosuna ücretsiz olarak erişmek isterseniz bu bilgileri paylaşabilirsiniz.
-<br><br>
-Formun doldurulması yaklaşık 3 - 5 dakika sürmektedir.
-<br><br>
-Proje veya ürünlerimizle ilgili sorularınız için ya da daha fazla bilgi almak isterseniz bize aşağıdaki sosyal medya hesaplarımızdan veya e-posta adresimiz üzerinden ulaşabilirsiniz:
-<br><br>
-<a href="https://www.instagram.com/noronest_/" target="_blank" style="color: blue; text-decoration: underline;">Instagram</a><br>
-<a href="https://www.linkedin.com/company/nöronest" target="_blank" style="color: blue; text-decoration: underline;">LinkedIn</a><br>
-<a href="mailto:noronest@gmail.com" style="color: blue; text-decoration: underline;">E-posta</a><br>
-<br>
-Zaman ayırdığınız için çok teşekkür ederiz. </p>
- 
-  <form id="noronest-form">
- 
-    <!-- Q1 -->
-    <fieldset>
-      <legend>Yaş aralığınız nedir? *</legend>
-      <label><input type="radio" name="yas" value="20-29" required> 20-29</label>
-      <label><input type="radio" name="yas" value="30-39"> 30-39</label>
-      <label><input type="radio" name="yas" value="41-50"> 41-50</label>
-      <label><input type="radio" name="yas" value="51-64"> 51-64</label>
-      <label><input type="radio" name="yas" value="65 ve Üstü"> 65 ve Üstü</label>
-    </fieldset>
- 
-    <!-- Q2 -->
-    <fieldset>
-      <legend>Günlük hayatınızda aşağıdakilerden hangilerini sıklıkla yaşıyorsunuz? (Günde en az 2 kere) *<br><i>Birden fazla seçenek seçebilirsiniz.</i></legend>
-      <label><input type="checkbox" name="gunluk_sorunlar" value="Odaklanma problemleri"> Odaklanma problemleri</label>
-      <label><input type="checkbox" name="gunluk_sorunlar" value="Kişi, yer ya da nesne isimlerini unutma"> Kişi, yer ya da nesne isimlerini unutma</label>
-      <label><input type="checkbox" name="gunluk_sorunlar" value="Zihinsel yorgunluk"> Zihinsel yorgunluk</label>
-      <label><input type="checkbox" name="gunluk_sorunlar" value="Yeni bir şey öğrenirken zorlanma"> Yeni bir şey öğrenirken zorlanma</label>
-      <label><input type="checkbox" name="gunluk_sorunlar" value="Ocağı açık, ütüyü fişte unutma"> Ocağı açık, ütüyü fişte unutma</label>
-      <label><input type="checkbox" name="gunluk_sorunlar" value="Ruh halinde değişiklik"> Ruh halinde değişiklik</label>
-      <label><input type="checkbox" name="gunluk_sorunlar" value="Günlük aktivitelerde fiziksel ya da duygusal olarak zorlanma"> Günlük aktivitelerde fiziksel ya da duygusal olarak zorlanma</label>
-      <input type="text" name="gunluk_sorunlar_diger" placeholder="Diğer (Belirtiniz)">
-    </fieldset>
- 
-    <!-- Q3 -->
-    <fieldset>
-      <legend>Zihinsel becerilerinizi (örneğin dikkat, hafıza, problem çözme gibi) desteklemek amacıyla şu anda aktif olarak bir yöntem (bulmaca, mobil uygulama, özel beslenme vb.) kullanıyor musunuz? *</legend>
-      <label><input type="radio" name="yontem_kullanimi" id="yontem_evet" value="Evet" required> Evet</label>
-      <label><input type="radio" name="yontem_kullanimi" id="yontem_hayir" value="Hayır"> Hayır</label>
-    </fieldset>
- 
-    <!-- Q4 (NEW) -->
-    <fieldset id="q4-fieldset" class="q4-hidden">
-      <legend>Önceki soruya evet cevabını verdiyseniz uyguladığınız yöntemleri seçiniz.<br><i>Birden fazla seçenek seçebilirsiniz.</i></legend>
-      <label><input type="checkbox" name="kullanilan_yontemler" value="Bulmaca"> Bulmaca</label>
-      <label><input type="checkbox" name="kullanilan_yontemler" value="Sudoku"> Sudoku</label>
-      <label><input type="checkbox" name="kullanilan_yontemler" value="Mobil Oyun"> Mobil Oyun</label>
-      <label><input type="checkbox" name="kullanilan_yontemler" value="Frekans Cihazı"> Frekans Cihazı</label>
-      <label><input type="checkbox" name="kullanilan_yontemler" value="Özel Diyet"> Özel Diyet</label>
-      <label><input type="checkbox" name="kullanilan_yontemler" value="Meditasyon"> Meditasyon</label>
-      <label><input type="checkbox" name="kullanilan_yontemler" value="Koku terapisi (lavanta yağı, biberiye vb.)"> Koku terapisi (lavanta yağı, biberiye vb.)</label>
-      <label><input type="checkbox" name="kullanilan_yontemler" value="VR Oyunları"> VR Oyunları</label>
-      <label><input type="checkbox" name="kullanilan_yontemler" value="Egzersiz"> Egzersiz</label>
-      <label><input type="checkbox" name="kullanilan_yontemler" value="Bitkisel İlaç"> Bitkisel İlaç</label>
-      <label><input type="checkbox" name="kullanilan_yontemler" value="Müzik terapisi"> Müzik terapisi</label>
-      <input type="text" name="kullanilan_yontemler_diger" placeholder="Diğer (Belirtiniz)">
-    </fieldset>
- 
-    <!-- Q5 (NEW) -->
-    <fieldset>
-      <legend>Bilişsel becerileri desteklemeye yönelik olarak tasarlanmış video oyunları hakkında ne düşünüyorsunuz? *<br><i>Birden fazla seçenek seçebilirsiniz.</i></legend>
-      <label><input type="checkbox" name="oyun_dusuncesi" value="Eğlenceli bulurum"> Eğlenceli bulurum</label>
-      <label><input type="checkbox" name="oyun_dusuncesi" value="Etkili bulurum"> Etkili bulurum</label>
-      <label><input type="checkbox" name="oyun_dusuncesi" value="Vakit kaybı olarak görürüm"> Vakit kaybı olarak görürüm</label>
-      <label><input type="checkbox" name="oyun_dusuncesi" value="Etkisi olacağını düşünmüyorum"> Etkisi olacağını düşünmüyorum</label>
-      <label><input type="checkbox" name="oyun_dusuncesi" value="Kararsızım"> Kararsızım</label>
-    </fieldset>
- 
-    <!-- Q6 (NEW) -->
-    <fieldset>
-      <legend>Günde kaç dakikanızı zihinsel becerileri desteklemeye yönelik bir oyuna ayırmayı tercih edersiniz? *</legend>
-      <label><input type="radio" name="oyun_suresi" value="5-10 dakika" required> 5-10 dakika</label>
-      <label><input type="radio" name="oyun_suresi" value="15-30 dakika"> 15-30 dakika</label>
-      <label><input type="radio" name="oyun_suresi" value="30-45 dakika"> 30-45 dakika</label>
-      <label><input type="radio" name="oyun_suresi" value="45 dakika - 1 saat"> 45 dakika - 1 saat</label>
-      <label><input type="radio" name="oyun_suresi" value="1 saatten daha fazla"> 1 saatten daha fazla</label>
-      <input type="text" name="oyun_suresi_diger" placeholder="Diğer (Belirtiniz)">
-    </fieldset>
- 
-    <!-- Q7 -->
-    <fieldset>
-      <legend>Bir mobil oyunun eğlence sunmasının yanı sıra, <strong>zihinsel becerileri desteklemeye yönelik olarak bilimsel çalışmalarla değerlendirilmiş olması</strong> sizin için ne kadar önemli? (1 - hiç önemli değil, 10 - çok önemli) *</legend>
-      <div class="rating-container">
-        <label><input type="radio" name="bilimsel_onem" value="1" required> 1</label>
-        <label><input type="radio" name="bilimsel_onem" value="2"> 2</label>
-        <label><input type="radio" name="bilimsel_onem" value="3"> 3</label>
-        <label><input type="radio" name="bilimsel_onem" value="4"> 4</label>
-        <label><input type="radio" name="bilimsel_onem" value="5"> 5</label>
-        <label><input type="radio" name="bilimsel_onem" value="6"> 6</label>
-        <label><input type="radio" name="bilimsel_onem" value="7"> 7</label>
-        <label><input type="radio" name="bilimsel_onem" value="8"> 8</label>
-        <label><input type="radio" name="bilimsel_onem" value="9"> 9</label>
-        <label><input type="radio" name="bilimsel_onem" value="10"> 10</label>
-      </div>
-    </fieldset>
- 
-    <!-- Q8 (NEW) -->
-    <fieldset>
-      <legend>Beynin <strong>belirli frekanslarda ışık veya ses yoluyla uyarılmasının</strong> bilişsel becerilerin gelişimini desteklediğini daha önce duydunuz mu? *</legend>
-      <label><input type="radio" name="frekans_bilinirligi" value="Evet" required> Evet</label>
-      <label><input type="radio" name="frekans_bilinirligi" value="Hayır"> Hayır</label>
-    </fieldset>
- 
-    <!-- Q9 (NEW) -->
-    <fieldset>
-      <legend>Evinizde, oyun oynarken veya kitap okurken kullanabileceğiniz; <strong>vücuda doğrudan müdahale etmeyen bir giyilebilir teknoloji cihazı</strong> kullanma fikrine ne kadar sıcak bakarsınız? (1- asla kullanmam, 10- kesin kullanırım) *</legend>
-      <div class="rating-container">
-        <label><input type="radio" name="giyilebilir_fikri" value="1" required> 1</label>
-        <label><input type="radio" name="giyilebilir_fikri" value="2"> 2</label>
-        <label><input type="radio" name="giyilebilir_fikri" value="3"> 3</label>
-        <label><input type="radio" name="giyilebilir_fikri" value="4"> 4</label>
-        <label><input type="radio" name="giyilebilir_fikri" value="5"> 5</label>
-        <label><input type="radio" name="giyilebilir_fikri" value="6"> 6</label>
-        <label><input type="radio" name="giyilebilir_fikri" value="7"> 7</label>
-        <label><input type="radio" name="giyilebilir_fikri" value="8"> 8</label>
-        <label><input type="radio" name="giyilebilir_fikri" value="9"> 9</label>
-        <label><input type="radio" name="giyilebilir_fikri" value="10"> 10</label>
-      </div>
-    </fieldset>
- 
-    <!-- Q10 (NEW) -->
-    <fieldset>
-      <legend>Bu tarz bir teknolojik cihazda en çok neye önem verirsiniz? *<br><i>Birden fazla seçenek seçebilirsiniz.</i></legend>
-      <label><input type="checkbox" name="cihaz_ozellikleri" value="FDA onayı (ABD'de tıbbi ürünleri ve teknolojileri denetleyen resmi kurum)"> FDA onayı (ABD'de tıbbi ürünleri ve teknolojileri denetleyen resmi kurum)</label>
-      <label><input type="checkbox" name="cihaz_ozellikleri" value="Kullanım kolaylığı"> Kullanım kolaylığı</label>
-      <label><input type="checkbox" name="cihaz_ozellikleri" value="Tasarım şıklığı"> Tasarım şıklığı</label>
-      <label><input type="checkbox" name="cihaz_ozellikleri" value="Fiyat"> Fiyat</label>
-      <label><input type="checkbox" name="cihaz_ozellikleri" value="İlk 30 gün iade garantisi"> İlk 30 gün iade garantisi</label>
-      <label><input type="checkbox" name="cihaz_ozellikleri" value="Taksit imkanı"> Taksit imkanı</label>
-      <label><input type="checkbox" name="cihaz_ozellikleri" value="Klinik çalışma sonuçları"> Klinik çalışma sonuçları</label>
-      <label><input type="checkbox" name="cihaz_ozellikleri" value="Arkadaş tavsiyesi"> Arkadaş tavsiyesi</label>
-      <label><input type="checkbox" name="cihaz_ozellikleri" value="Doktor tavsiyesi"> Doktor tavsiyesi</label>
-      <input type="text" name="cihaz_ozellikleri" placeholder="Diğer (Belirtiniz)">
-    </fieldset>
- 
-    <!-- Q11 -->
-    <fieldset>
-      <legend>Bilişsel gerilemeyi yavaşlatmaya yönelik olarak geliştirilmiş ve bilimsel çalışmalarla desteklenen bir sistem için, aylık abonelik modeli mi yoksa cihazı tek seferlik satın alma seçeneğini mi tercih ederdiniz? *</legend>
-      <label><input type="radio" name="odeme_modeli" value="Aylık abonelik" required> Aylık abonelik</label>
-      <label><input type="radio" name="odeme_modeli" value="Tek seferlik satın alma"> Tek seferlik satın alma</label>
-      <input type="text" name="odeme_modeli_diger" placeholder="Diğer (Belirtiniz)">
-    </fieldset>
- 
-    <!-- Q12 (NEW) -->
-    <fieldset>
-      <legend>Bilişsel sağlığı desteklemeye yönelik olarak tasarlanmış mobil oyunlar için <strong>aylık abonelik</strong> kapsamında en fazla ne kadarlık bir bütçeyi makul bulursunuz? *</legend>
-      <label><input type="radio" name="mobil_butce" value="150 TL" required> 150 TL</label>
-      <label><input type="radio" name="mobil_butce" value="200 TL"> 200 TL</label>
-      <label><input type="radio" name="mobil_butce" value="250 TL"> 250 TL</label>
-      <label><input type="radio" name="mobil_butce" value="300 TL"> 300 TL</label>
-      <label><input type="radio" name="mobil_butce" value="350 TL"> 350 TL</label>
-      <label><input type="radio" name="mobil_butce" value="400 TL"> 400 TL</label>
-      <input type="text" name="mobil_butce_diger" placeholder="Diğer (Belirtiniz)">
-    </fieldset>
- 
-    <!-- Q13 (NEW) -->
-    <fieldset>
-      <legend>Bilişsel sağlığı desteklemeye yönelik olarak tasarlanmış mobil oyunlar ile birlikte VR (Sanal Gerçeklik) başlığı için <strong>aylık abonelik</strong> kapsamında en fazla ne kadarlık bir bütçeyi makul bulursunuz? *</legend>
-      <label><input type="radio" name="vr_butce" value="1000 TL" required> 1000 TL</label>
-      <label><input type="radio" name="vr_butce" value="1100 TL"> 1100 TL</label>
-      <label><input type="radio" name="vr_butce" value="1200 TL"> 1200 TL</label>
-      <label><input type="radio" name="vr_butce" value="1300 TL"> 1300 TL</label>
-      <label><input type="radio" name="vr_butce" value="1400 TL"> 1400 TL</label>
-      <label><input type="radio" name="vr_butce" value="1500 TL"> 1500 TL</label>
-      <input type="text" name="vr_butce_diger" placeholder="Diğer (Belirtiniz)">
-    </fieldset>
- 
-    <!-- Q14 (NEW) -->
-    <fieldset>
-      <legend>Bilişsel sağlığı desteklemeye yönelik olarak tasarlanmış bir frekans cihazı için <strong>tek seferlik</strong> en fazla ne kadar bütçe ayırmayı makul bulursunuz? *</legend>
-      <label><input type="radio" name="cihaz_butce" value="10.000 TL" required> 10.000 TL</label>
-      <label><input type="radio" name="cihaz_butce" value="12.000 TL"> 12.000 TL</label>
-      <label><input type="radio" name="cihaz_butce" value="14.000 TL"> 14.000 TL</label>
-      <label><input type="radio" name="cihaz_butce" value="16.000 TL"> 16.000 TL</label>
-      <label><input type="radio" name="cihaz_butce" value="18.000 TL"> 18.000 TL</label>
-      <label><input type="radio" name="cihaz_butce" value="20.000 TL"> 20.000 TL</label>
-      <input type="text" name="cihaz_butce_diger" placeholder="Diğer (Belirtiniz)">
-    </fieldset>
- 
-    <!-- Q15 (NEW) -->
-    <fieldset>
-      <legend>Donanım cihazına sahip olduktan sonra, düzenli olarak sunulan <strong>yeni oyun içerikleri ve detaylı bilişsel performans özetleri</strong> için aylık bir abonelik modeli hakkında ne düşünürsünüz? *</legend>
-      <label><input type="radio" name="donanim_abonelik" value="Kesinlikle kullanırım" required> Kesinlikle kullanırım</label>
-      <label><input type="radio" name="donanim_abonelik" value="Sadece oyunlar çok kaliteliyse düşünürüm"> Sadece oyunlar çok kaliteliyse düşünürüm</label>
-      <label><input type="radio" name="donanim_abonelik" value="Abonelik modelini sevmem, her şey dahil tek fiyat olsun"> Abonelik modelini sevmem, her şey dahil tek fiyat olsun</label>
-      <input type="text" name="donanim_abonelik_diger" placeholder="Diğer (Belirtiniz)">
-    </fieldset>
- 
-    <!-- Q16 -->
-    <fieldset>
-      <legend>Sizce böyle bir sistemin (mobil oyunlar ile birlikte frekans cihazı desteği) size sunabileceği en önemli değer ne olurdu?</legend>
-      <textarea name="en_onemli_deger" rows="3" style="width:100%"></textarea>
-    </fieldset>
- 
-    <h3>Ücretsiz Demo ve İletişim (İsteğe Bağlı)</h3>
-    <p><i>Buradan sonraki sorular zorunlu değildir. Ücretsiz demoya erişmek ve ürün hakkında bilgi almak isterseniz doldurabilirsiniz. Ayrıca bilişsel gerileme ve bakım süreçleri üzerine bloglarımıza erişim ile özelleştirilmiş Chat-Bot desteği için de abone olmak isterseniz belirtebilirsiniz.</i></p>
- 
-    <input type="text" name="isim" placeholder="İsim - Soy İsim"><br><br>
-    <input type="tel" name="telefon" placeholder="Telefon Numaranız" pattern="05[0-9]{9}" title="Lütfen 05 ile başlayan 11 haneli bir telefon numarası giriniz (Örn: 05551234567)."><br><br>
-    <input type="email" name="email" placeholder="E-Posta Adresiniz" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Lütfen geçerli bir e-posta adresi giriniz."><br><br>
- 
-    <!-- Q20 -->
-    <fieldset>
-      <legend>Mail bültenine abone olmak istiyorum.</legend>
-      <label><input type="radio" name="bulten" value="Evet"> Evet</label>
-      <label><input type="radio" name="bulten" value="Hayır"> Hayır</label>
-    </fieldset>
- 
-    <!-- Q21 (NEW) -->
-    <fieldset>
-      <legend>Chat-Bot'u kullanmak ve geri bildirim vermek istiyorum.</legend>
-      <label><input type="radio" name="chatbot" value="Evet"> Evet</label>
-      <label><input type="radio" name="chatbot" value="Hayır"> Hayır</label>
-      <label><input type="radio" name="chatbot" value="Kararsızım"> Kararsızım</label>
-    </fieldset>
- 
-    <!-- Q22 -->
-    <fieldset>
-      <legend>Varsa paylaşmak istediğiniz ek bilgi, öneri ya da soru</legend>
-      <textarea name="ek_bilgi" rows="3" style="width:100%"></textarea>
-    </fieldset>
- 
-    <div class="form-submit-wrapper"><button type="submit" id="submit-btn">Formu Gönder</button></div>
-  </form>
- 
-  <div id="loading-message" style="display:none;">Verileriniz güvenle iletiliyor, lütfen bekleyin...</div>
-  <div id="success-message" style="display:none; color: green;">Değerli geri bildiriminiz için teşekkür ederiz! Yanıtınız kaydedildi.</div>
-</div>
- 
-<script>
-  // Handle 'Other' text input mutually exclusive with radio buttons
-  document.querySelectorAll('fieldset').forEach(fieldset => {
-    const radioInputs = fieldset.querySelectorAll('input[type="radio"]');
-    const otherInput = fieldset.querySelector('input[type="text"][name$="_diger"]');
-    
-    if (radioInputs.length > 0 && otherInput) {
-      const requiredRadios = Array.from(radioInputs).filter(r => r.required);
-      
-      otherInput.addEventListener('input', function() {
-        if (this.value.trim() !== '') {
-          radioInputs.forEach(r => {
-            r.checked = false;
-            r.required = false;
-          });
-        } else {
-          requiredRadios.forEach(r => r.required = true);
-        }
-      });
+        <p style="text-align: left;">
+          Merhaba, NöroNest olarak Alzheimer hastalarına yönelik bilişsel süreçleri desteklemeyi amaçlayan 2D/3D oyun
+          tabanlı dijital uygulamalar ve bir frekans cihazı geliştiriyoruz. Geliştirdiğimiz uygulamaların etkilerini
+          incelemek amacıyla klinik çalışmalar yürütüyoruz.
+          <br><br>
+          Bu form aracılığıyla, geliştirme sürecinde olduğumuz ürünleri pazarda daha doğru konumlandırabilmek için
+          sizlerden geri bildirim almayı hedefliyoruz.
+          <br><br>
+          Formun son kısmında yer alan kişisel bilgileri doldurmak zorunlu değildir; ancak ürün demosuna ücretsiz olarak
+          erişmek isterseniz bu bilgileri paylaşabilirsiniz.
+          <br><br>
+          Formun doldurulması yaklaşık 3 - 5 dakika sürmektedir.
+          <br><br>
+          Proje veya ürünlerimizle ilgili sorularınız için ya da daha fazla bilgi almak isterseniz bize aşağıdaki sosyal
+          medya hesaplarımızdan veya e-posta adresimiz üzerinden ulaşabilirsiniz:
+          <br><br>
+          <a href="https://www.instagram.com/noronest_/" target="_blank"
+            style="color: blue; text-decoration: underline;">Instagram</a><br>
+          <a href="https://www.linkedin.com/company/nöronest" target="_blank"
+            style="color: blue; text-decoration: underline;">LinkedIn</a><br>
+          <a href="mailto:noronest@gmail.com" style="color: blue; text-decoration: underline;">E-posta</a><br>
+          <br>
+          Zaman ayırdığınız için çok teşekkür ederiz.
+        </p>
 
-      radioInputs.forEach(radio => {
-        radio.addEventListener('change', function() {
-          if (this.checked) {
-            otherInput.value = '';
-            requiredRadios.forEach(r => r.required = true);
+        <form id="noronest-form">
+
+          <!-- Q1 -->
+          <fieldset>
+            <legend>Yaş aralığınız nedir? *</legend>
+            <label><input type="radio" name="yas" value="20-29" required> 20-29</label>
+            <label><input type="radio" name="yas" value="30-39"> 30-39</label>
+            <label><input type="radio" name="yas" value="41-50"> 41-50</label>
+            <label><input type="radio" name="yas" value="51-64"> 51-64</label>
+            <label><input type="radio" name="yas" value="65 ve Üstü"> 65 ve Üstü</label>
+          </fieldset>
+
+          <!-- Q2 -->
+          <fieldset>
+            <legend>Günlük hayatınızda aşağıdakilerden hangilerini sıklıkla yaşıyorsunuz? (Günde en az 2 kere)
+              *<br><i>Birden fazla seçenek seçebilirsiniz.</i></legend>
+            <label><input type="checkbox" name="gunluk_sorunlar" value="Odaklanma problemleri"> Odaklanma
+              problemleri</label>
+            <label><input type="checkbox" name="gunluk_sorunlar" value="Kişi, yer ya da nesne isimlerini unutma"> Kişi,
+              yer ya da nesne isimlerini unutma</label>
+            <label><input type="checkbox" name="gunluk_sorunlar" value="Zihinsel yorgunluk"> Zihinsel yorgunluk</label>
+            <label><input type="checkbox" name="gunluk_sorunlar" value="Yeni bir şey öğrenirken zorlanma"> Yeni bir şey
+              öğrenirken zorlanma</label>
+            <label><input type="checkbox" name="gunluk_sorunlar" value="Ocağı açık, ütüyü fişte unutma"> Ocağı açık,
+              ütüyü fişte unutma</label>
+            <label><input type="checkbox" name="gunluk_sorunlar" value="Ruh halinde değişiklik"> Ruh halinde
+              değişiklik</label>
+            <label><input type="checkbox" name="gunluk_sorunlar"
+                value="Günlük aktivitelerde fiziksel ya da duygusal olarak zorlanma"> Günlük aktivitelerde fiziksel ya
+              da duygusal olarak zorlanma</label>
+            <input type="text" name="gunluk_sorunlar_diger" placeholder="Diğer (Belirtiniz)">
+          </fieldset>
+
+          <!-- Q3 -->
+          <fieldset>
+            <legend>Zihinsel becerilerinizi (örneğin dikkat, hafıza, problem çözme gibi) desteklemek amacıyla şu anda
+              aktif olarak bir yöntem (bulmaca, mobil uygulama, özel beslenme vb.) kullanıyor musunuz? *</legend>
+            <label><input type="radio" name="yontem_kullanimi" id="yontem_evet" value="Evet" required> Evet</label>
+            <label><input type="radio" name="yontem_kullanimi" id="yontem_hayir" value="Hayır"> Hayır</label>
+          </fieldset>
+
+          <!-- Q4 (NEW) -->
+          <fieldset id="q4-fieldset" class="q4-hidden">
+            <legend>Önceki soruya evet cevabını verdiyseniz uyguladığınız yöntemleri seçiniz.<br><i>Birden fazla seçenek
+                seçebilirsiniz.</i></legend>
+            <label><input type="checkbox" name="kullanilan_yontemler" value="Bulmaca"> Bulmaca</label>
+            <label><input type="checkbox" name="kullanilan_yontemler" value="Sudoku"> Sudoku</label>
+            <label><input type="checkbox" name="kullanilan_yontemler" value="Mobil Oyun"> Mobil Oyun</label>
+            <label><input type="checkbox" name="kullanilan_yontemler" value="Frekans Cihazı"> Frekans Cihazı</label>
+            <label><input type="checkbox" name="kullanilan_yontemler" value="Özel Diyet"> Özel Diyet</label>
+            <label><input type="checkbox" name="kullanilan_yontemler" value="Meditasyon"> Meditasyon</label>
+            <label><input type="checkbox" name="kullanilan_yontemler"
+                value="Koku terapisi (lavanta yağı, biberiye vb.)"> Koku terapisi (lavanta yağı, biberiye vb.)</label>
+            <label><input type="checkbox" name="kullanilan_yontemler" value="VR Oyunları"> VR Oyunları</label>
+            <label><input type="checkbox" name="kullanilan_yontemler" value="Egzersiz"> Egzersiz</label>
+            <label><input type="checkbox" name="kullanilan_yontemler" value="Bitkisel İlaç"> Bitkisel İlaç</label>
+            <label><input type="checkbox" name="kullanilan_yontemler" value="Müzik terapisi"> Müzik terapisi</label>
+            <input type="text" name="kullanilan_yontemler_diger" placeholder="Diğer (Belirtiniz)">
+          </fieldset>
+
+          <!-- Q5 (NEW) -->
+          <fieldset>
+            <legend>Bilişsel becerileri desteklemeye yönelik olarak tasarlanmış video oyunları hakkında ne
+              düşünüyorsunuz? *<br><i>Birden fazla seçenek seçebilirsiniz.</i></legend>
+            <label><input type="checkbox" name="oyun_dusuncesi" value="Eğlenceli bulurum"> Eğlenceli bulurum</label>
+            <label><input type="checkbox" name="oyun_dusuncesi" value="Etkili bulurum"> Etkili bulurum</label>
+            <label><input type="checkbox" name="oyun_dusuncesi" value="Vakit kaybı olarak görürüm"> Vakit kaybı olarak
+              görürüm</label>
+            <label><input type="checkbox" name="oyun_dusuncesi" value="Etkisi olacağını düşünmüyorum"> Etkisi olacağını
+              düşünmüyorum</label>
+            <label><input type="checkbox" name="oyun_dusuncesi" value="Kararsızım"> Kararsızım</label>
+          </fieldset>
+
+          <!-- Q6 (NEW) -->
+          <fieldset>
+            <legend>Günde kaç dakikanızı zihinsel becerileri desteklemeye yönelik bir oyuna ayırmayı tercih edersiniz? *
+            </legend>
+            <label><input type="radio" name="oyun_suresi" value="5-10 dakika" required> 5-10 dakika</label>
+            <label><input type="radio" name="oyun_suresi" value="15-30 dakika"> 15-30 dakika</label>
+            <label><input type="radio" name="oyun_suresi" value="30-45 dakika"> 30-45 dakika</label>
+            <label><input type="radio" name="oyun_suresi" value="45 dakika - 1 saat"> 45 dakika - 1 saat</label>
+            <label><input type="radio" name="oyun_suresi" value="1 saatten daha fazla"> 1 saatten daha fazla</label>
+            <input type="text" name="oyun_suresi_diger" placeholder="Diğer (Belirtiniz)">
+          </fieldset>
+
+          <!-- Q7 -->
+          <fieldset>
+            <legend>Bir mobil oyunun eğlence sunmasının yanı sıra, <strong>zihinsel becerileri desteklemeye yönelik
+                olarak bilimsel çalışmalarla değerlendirilmiş olması</strong> sizin için ne kadar önemli? (1 - hiç
+              önemli değil, 10 - çok önemli) *</legend>
+            <div class="rating-container">
+              <label><input type="radio" name="bilimsel_onem" value="1" required> 1</label>
+              <label><input type="radio" name="bilimsel_onem" value="2"> 2</label>
+              <label><input type="radio" name="bilimsel_onem" value="3"> 3</label>
+              <label><input type="radio" name="bilimsel_onem" value="4"> 4</label>
+              <label><input type="radio" name="bilimsel_onem" value="5"> 5</label>
+              <label><input type="radio" name="bilimsel_onem" value="6"> 6</label>
+              <label><input type="radio" name="bilimsel_onem" value="7"> 7</label>
+              <label><input type="radio" name="bilimsel_onem" value="8"> 8</label>
+              <label><input type="radio" name="bilimsel_onem" value="9"> 9</label>
+              <label><input type="radio" name="bilimsel_onem" value="10"> 10</label>
+            </div>
+          </fieldset>
+
+          <!-- Q8 (NEW) -->
+          <fieldset>
+            <legend>Beynin <strong>belirli frekanslarda ışık veya ses yoluyla uyarılmasının</strong> bilişsel
+              becerilerin gelişimini desteklediğini daha önce duydunuz mu? *</legend>
+            <label><input type="radio" name="frekans_bilinirligi" value="Evet" required> Evet</label>
+            <label><input type="radio" name="frekans_bilinirligi" value="Hayır"> Hayır</label>
+          </fieldset>
+
+          <!-- Q9 (NEW) -->
+          <fieldset>
+            <legend>Evinizde, oyun oynarken veya kitap okurken kullanabileceğiniz; <strong>vücuda doğrudan müdahale
+                etmeyen bir giyilebilir teknoloji cihazı</strong> kullanma fikrine ne kadar sıcak bakarsınız? (1- asla
+              kullanmam, 10- kesin kullanırım) *</legend>
+            <div class="rating-container">
+              <label><input type="radio" name="giyilebilir_fikri" value="1" required> 1</label>
+              <label><input type="radio" name="giyilebilir_fikri" value="2"> 2</label>
+              <label><input type="radio" name="giyilebilir_fikri" value="3"> 3</label>
+              <label><input type="radio" name="giyilebilir_fikri" value="4"> 4</label>
+              <label><input type="radio" name="giyilebilir_fikri" value="5"> 5</label>
+              <label><input type="radio" name="giyilebilir_fikri" value="6"> 6</label>
+              <label><input type="radio" name="giyilebilir_fikri" value="7"> 7</label>
+              <label><input type="radio" name="giyilebilir_fikri" value="8"> 8</label>
+              <label><input type="radio" name="giyilebilir_fikri" value="9"> 9</label>
+              <label><input type="radio" name="giyilebilir_fikri" value="10"> 10</label>
+            </div>
+          </fieldset>
+
+          <!-- Q10 (NEW) -->
+          <fieldset>
+            <legend>Bu tarz bir teknolojik cihazda en çok neye önem verirsiniz? *<br><i>Birden fazla seçenek
+                seçebilirsiniz.</i></legend>
+            <label><input type="checkbox" name="cihaz_ozellikleri"
+                value="FDA onayı (ABD'de tıbbi ürünleri ve teknolojileri denetleyen resmi kurum)"> FDA onayı (ABD'de
+              tıbbi ürünleri ve teknolojileri denetleyen resmi kurum)</label>
+            <label><input type="checkbox" name="cihaz_ozellikleri" value="Kullanım kolaylığı"> Kullanım
+              kolaylığı</label>
+            <label><input type="checkbox" name="cihaz_ozellikleri" value="Tasarım şıklığı"> Tasarım şıklığı</label>
+            <label><input type="checkbox" name="cihaz_ozellikleri" value="Fiyat"> Fiyat</label>
+            <label><input type="checkbox" name="cihaz_ozellikleri" value="İlk 30 gün iade garantisi"> İlk 30 gün iade
+              garantisi</label>
+            <label><input type="checkbox" name="cihaz_ozellikleri" value="Taksit imkanı"> Taksit imkanı</label>
+            <label><input type="checkbox" name="cihaz_ozellikleri" value="Klinik çalışma sonuçları"> Klinik çalışma
+              sonuçları</label>
+            <label><input type="checkbox" name="cihaz_ozellikleri" value="Arkadaş tavsiyesi"> Arkadaş tavsiyesi</label>
+            <label><input type="checkbox" name="cihaz_ozellikleri" value="Doktor tavsiyesi"> Doktor tavsiyesi</label>
+            <input type="text" name="cihaz_ozellikleri" placeholder="Diğer (Belirtiniz)">
+          </fieldset>
+
+          <!-- Q11 -->
+          <fieldset>
+            <legend>Bilişsel gerilemeyi yavaşlatmaya yönelik olarak geliştirilmiş ve bilimsel çalışmalarla desteklenen
+              bir sistem için, aylık abonelik modeli mi yoksa cihazı tek seferlik satın alma seçeneğini mi tercih
+              ederdiniz? *</legend>
+            <label><input type="radio" name="odeme_modeli" value="Aylık abonelik" required> Aylık abonelik</label>
+            <label><input type="radio" name="odeme_modeli" value="Tek seferlik satın alma"> Tek seferlik satın
+              alma</label>
+            <input type="text" name="odeme_modeli_diger" placeholder="Diğer (Belirtiniz)">
+          </fieldset>
+
+          <!-- Q12 (NEW) -->
+          <fieldset>
+            <legend>Bilişsel sağlığı desteklemeye yönelik olarak tasarlanmış mobil oyunlar için <strong>aylık
+                abonelik</strong> kapsamında en fazla ne kadarlık bir bütçeyi makul bulursunuz? *</legend>
+            <label><input type="radio" name="mobil_butce" value="150 TL" required> 150 TL</label>
+            <label><input type="radio" name="mobil_butce" value="200 TL"> 200 TL</label>
+            <label><input type="radio" name="mobil_butce" value="250 TL"> 250 TL</label>
+            <label><input type="radio" name="mobil_butce" value="300 TL"> 300 TL</label>
+            <label><input type="radio" name="mobil_butce" value="350 TL"> 350 TL</label>
+            <label><input type="radio" name="mobil_butce" value="400 TL"> 400 TL</label>
+            <input type="text" name="mobil_butce_diger" placeholder="Diğer (Belirtiniz)">
+          </fieldset>
+
+          <!-- Q13 (NEW) -->
+          <fieldset>
+            <legend>Bilişsel sağlığı desteklemeye yönelik olarak tasarlanmış mobil oyunlar ile birlikte VR (Sanal
+              Gerçeklik) başlığı için <strong>aylık abonelik</strong> kapsamında en fazla ne kadarlık bir bütçeyi makul
+              bulursunuz? *</legend>
+            <label><input type="radio" name="vr_butce" value="1000 TL" required> 1000 TL</label>
+            <label><input type="radio" name="vr_butce" value="1100 TL"> 1100 TL</label>
+            <label><input type="radio" name="vr_butce" value="1200 TL"> 1200 TL</label>
+            <label><input type="radio" name="vr_butce" value="1300 TL"> 1300 TL</label>
+            <label><input type="radio" name="vr_butce" value="1400 TL"> 1400 TL</label>
+            <label><input type="radio" name="vr_butce" value="1500 TL"> 1500 TL</label>
+            <input type="text" name="vr_butce_diger" placeholder="Diğer (Belirtiniz)">
+          </fieldset>
+
+          <!-- Q14 (NEW) -->
+          <fieldset>
+            <legend>Bilişsel sağlığı desteklemeye yönelik olarak tasarlanmış bir frekans cihazı için <strong>tek
+                seferlik</strong> en fazla ne kadar bütçe ayırmayı makul bulursunuz? *</legend>
+            <label><input type="radio" name="cihaz_butce" value="10.000 TL" required> 10.000 TL</label>
+            <label><input type="radio" name="cihaz_butce" value="12.000 TL"> 12.000 TL</label>
+            <label><input type="radio" name="cihaz_butce" value="14.000 TL"> 14.000 TL</label>
+            <label><input type="radio" name="cihaz_butce" value="16.000 TL"> 16.000 TL</label>
+            <label><input type="radio" name="cihaz_butce" value="18.000 TL"> 18.000 TL</label>
+            <label><input type="radio" name="cihaz_butce" value="20.000 TL"> 20.000 TL</label>
+            <input type="text" name="cihaz_butce_diger" placeholder="Diğer (Belirtiniz)">
+          </fieldset>
+
+          <!-- Q15 (NEW) -->
+          <fieldset>
+            <legend>Donanım cihazına sahip olduktan sonra, düzenli olarak sunulan <strong>yeni oyun içerikleri ve
+                detaylı bilişsel performans özetleri</strong> için aylık bir abonelik modeli hakkında ne düşünürsünüz? *
+            </legend>
+            <label><input type="radio" name="donanim_abonelik" value="Kesinlikle kullanırım" required> Kesinlikle
+              kullanırım</label>
+            <label><input type="radio" name="donanim_abonelik" value="Sadece oyunlar çok kaliteliyse düşünürüm"> Sadece
+              oyunlar çok kaliteliyse düşünürüm</label>
+            <label><input type="radio" name="donanim_abonelik"
+                value="Abonelik modelini sevmem, her şey dahil tek fiyat olsun"> Abonelik modelini sevmem, her şey dahil
+              tek fiyat olsun</label>
+            <input type="text" name="donanim_abonelik_diger" placeholder="Diğer (Belirtiniz)">
+          </fieldset>
+
+          <!-- Q16 -->
+          <fieldset>
+            <legend>Sizce böyle bir sistemin (mobil oyunlar ile birlikte frekans cihazı desteği) size sunabileceği en
+              önemli değer ne olurdu?</legend>
+            <textarea name="en_onemli_deger" rows="3" style="width:100%"></textarea>
+          </fieldset>
+
+          <h3>Ücretsiz Demo ve İletişim (İsteğe Bağlı)</h3>
+          <p><i>Buradan sonraki sorular zorunlu değildir. Ücretsiz demoya erişmek ve ürün hakkında bilgi almak
+              isterseniz doldurabilirsiniz. Ayrıca bilişsel gerileme ve bakım süreçleri üzerine bloglarımıza erişim ile
+              özelleştirilmiş Chat-Bot desteği için de abone olmak isterseniz belirtebilirsiniz.</i></p>
+
+          <input type="text" name="isim" placeholder="İsim - Soy İsim"><br><br>
+          <input type="tel" name="telefon" placeholder="Telefon Numaranız" pattern="05[0-9]{9}"
+            title="Lütfen 05 ile başlayan 11 haneli bir telefon numarası giriniz (Örn: 05551234567)."><br><br>
+          <input type="email" name="email" placeholder="E-Posta Adresiniz"
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            title="Lütfen geçerli bir e-posta adresi giriniz."><br><br>
+
+          <!-- Q20 -->
+          <fieldset>
+            <legend>Mail bültenine abone olmak istiyorum.</legend>
+            <label><input type="radio" name="bulten" value="Evet"> Evet</label>
+            <label><input type="radio" name="bulten" value="Hayır"> Hayır</label>
+          </fieldset>
+
+          <!-- Q21 (NEW) -->
+          <fieldset>
+            <legend>Chat-Bot'u kullanmak ve geri bildirim vermek istiyorum.</legend>
+            <label><input type="radio" name="chatbot" value="Evet"> Evet</label>
+            <label><input type="radio" name="chatbot" value="Hayır"> Hayır</label>
+            <label><input type="radio" name="chatbot" value="Kararsızım"> Kararsızım</label>
+          </fieldset>
+
+          <!-- Q22 -->
+          <fieldset>
+            <legend>Varsa paylaşmak istediğiniz ek bilgi, öneri ya da soru</legend>
+            <textarea name="ek_bilgi" rows="3" style="width:100%"></textarea>
+          </fieldset>
+
+          <div class="form-submit-wrapper"><button type="submit" id="submit-btn">Formu Gönder</button></div>
+        </form>
+
+        <div id="loading-message" style="display:none;">Verileriniz güvenle iletiliyor, lütfen bekleyin...</div>
+        <div id="success-message" style="display:none; color: green;">Değerli geri bildiriminiz için teşekkür ederiz!
+          Yanıtınız kaydedildi.</div>
+      </div>
+
+      <script>
+        // Handle 'Other' text input mutually exclusive with radio buttons
+        document.querySelectorAll('fieldset').forEach(fieldset => {
+          const radioInputs = fieldset.querySelectorAll('input[type="radio"]');
+          const otherInput = fieldset.querySelector('input[type="text"][name$="_diger"]');
+
+          if (radioInputs.length > 0 && otherInput) {
+            const requiredRadios = Array.from(radioInputs).filter(r => r.required);
+
+            otherInput.addEventListener('input', function () {
+              if (this.value.trim() !== '') {
+                radioInputs.forEach(r => {
+                  r.checked = false;
+                  r.required = false;
+                });
+              } else {
+                requiredRadios.forEach(r => r.required = true);
+              }
+            });
+
+            radioInputs.forEach(radio => {
+              radio.addEventListener('change', function () {
+                if (this.checked) {
+                  otherInput.value = '';
+                  requiredRadios.forEach(r => r.required = true);
+                }
+              });
+            });
           }
         });
-      });
-    }
-  });
 
-  // Elements for conditionally displaying Q4
-  const yontemEvet = document.getElementById('yontem_evet');
-  const yontemHayir = document.getElementById('yontem_hayir');
-  const q4Fieldset = document.getElementById('q4-fieldset');
+        // Elements for conditionally displaying Q4
+        const yontemEvet = document.getElementById('yontem_evet');
+        const yontemHayir = document.getElementById('yontem_hayir');
+        const q4Fieldset = document.getElementById('q4-fieldset');
 
-  function toggleQ4() {
-    if (yontemEvet.checked) {
-      q4Fieldset.classList.remove('q4-hidden');
-      q4Fieldset.classList.add('q4-visible');
-    } else {
-      q4Fieldset.classList.remove('q4-visible');
-      q4Fieldset.classList.add('q4-hidden');
-      // Clear Q4 inputs if "Hayır" is selected
-      const q4Checkboxes = q4Fieldset.querySelectorAll('input[type="checkbox"]');
-      q4Checkboxes.forEach(cb => cb.checked = false);
-      const q4Other = q4Fieldset.querySelector('input[type="text"]');
-      if (q4Other) q4Other.value = '';
-    }
-  }
+        function toggleQ4() {
+          if (yontemEvet.checked) {
+            q4Fieldset.classList.remove('q4-hidden');
+            q4Fieldset.classList.add('q4-visible');
+          } else {
+            q4Fieldset.classList.remove('q4-visible');
+            q4Fieldset.classList.add('q4-hidden');
+            // Clear Q4 inputs if "Hayır" is selected
+            const q4Checkboxes = q4Fieldset.querySelectorAll('input[type="checkbox"]');
+            q4Checkboxes.forEach(cb => cb.checked = false);
+            const q4Other = q4Fieldset.querySelector('input[type="text"]');
+            if (q4Other) q4Other.value = '';
+          }
+        }
 
-  yontemEvet.addEventListener('change', toggleQ4);
-  yontemHayir.addEventListener('change', toggleQ4);
+        yontemEvet.addEventListener('change', toggleQ4);
+        yontemHayir.addEventListener('change', toggleQ4);
 
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwnfCJK2FDWiQdabimOS53gkP_Dom1yr2mmyMB7VAGiPsq9hJNNsnpslrSJFos5CV5L/exec';
-  const form = document.getElementById('noronest-form');
-  const btn = document.getElementById('submit-btn');
-  const loading = document.getElementById('loading-message');
-  const success = document.getElementById('success-message');
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwnfCJK2FDWiQdabimOS53gkP_Dom1yr2mmyMB7VAGiPsq9hJNNsnpslrSJFos5CV5L/exec';
+        const form = document.getElementById('noronest-form');
+        const btn = document.getElementById('submit-btn');
+        const loading = document.getElementById('loading-message');
+        const success = document.getElementById('success-message');
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    
-    // UI Güncellemesi
-    btn.disabled = true;
-    loading.style.display = 'block';
-    success.style.display = 'none';
+        form.addEventListener('submit', e => {
+          e.preventDefault();
 
-    // FormData nesnesi checkbox array'lerini otomatik olarak toplar. 
-    // GAS tarafındaki e.parameters bunu ayrıştıracaktır.
-    fetch(scriptURL, { 
-      method: 'POST', 
-      body: new FormData(form)
-    })
-    .then(response => response.json())
-    .then(data => {
-      if(data.result === "success") {
-        loading.style.display = 'none';
-        success.style.display = 'block';
-        form.reset();
-      } else {
-        throw new Error("Sunucu hatası");
-      }
-    })
-    .catch(error => {
-      loading.style.display = 'none';
-      alert('Form gönderilirken bir hata oluştu. Lütfen bağlantınızı kontrol edip tekrar deneyin.');
-      console.error('Error!', error.message);
-    })
-    .finally(() => {
-      btn.disabled = false;
-    });
-  });
-</script>
+          // UI Güncellemesi
+          btn.disabled = true;
+          loading.style.display = 'block';
+          success.style.display = 'none';
+
+          // FormData nesnesi checkbox array'lerini otomatik olarak toplar. 
+          // GAS tarafındaki e.parameters bunu ayrıştıracaktır.
+          fetch(scriptURL, {
+            method: 'POST',
+            body: new FormData(form)
+          })
+            .then(response => response.json())
+            .then(data => {
+              if (data.result === "success") {
+                loading.style.display = 'none';
+                success.style.display = 'block';
+                form.reset();
+              } else {
+                throw new Error("Sunucu hatası");
+              }
+            })
+            .catch(error => {
+              loading.style.display = 'none';
+              alert('Form gönderilirken bir hata oluştu. Lütfen bağlantınızı kontrol edip tekrar deneyin.');
+              console.error('Error!', error.message);
+            })
+            .finally(() => {
+              btn.disabled = false;
+            });
+        });
+      </script>
     </div>
   </section>
 
@@ -560,7 +640,9 @@ Zaman ayırdığınız için çok teşekkür ederiz. </p>
             </a>
             <a href="#" aria-label="Twitter">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                </path>
               </svg>
             </a>
             <a href="#" aria-label="Instagram">
@@ -609,4 +691,5 @@ Zaman ayırdığınız için çok teşekkür ederiz. </p>
 
   <script src="../index.js"></script>
 </body>
+
 </html>
