@@ -9,13 +9,13 @@
 
 :root {
   /* Primary Colors - Customize these to match your brand */
-  --primary-color: #11999E;
-  --primary-light: #30E3CA;
+  --primary-color: #7ea7e4;
+  --primary-light: #c2d9ff;
   --secondary-color: #40514E;
-  --accent-color: #30E3CA;
+  --accent-color: #c2d9ff;
   
   /* Background Colors */
-  --bg-color: #E4F9F5;
+  --bg-color: #f2f7ff;
   --bg-light: #ffffff;
   --bg-dark: #40514E;
   
