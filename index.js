@@ -96,10 +96,12 @@ const translations = {
     team_category_software: "Software Development Team",
     team_category_clinical: "Clinical Team",
     team_category_ml: "Machine Learning Team",
+    team_category_social: "Social Media Team",
     software_team_category_title: "Yazılım Ekibi",
     management_team_category_title: "Yönetim",
     clinical_team_category_title: "Klinil Ekip",
     machine_learning_team_category_title: "Makine Öğrenmesi Ekibi",
+    social_media_team_category_title: "Sosyal Medya Ekibi",
 
 
     // Profile Page
@@ -285,10 +287,12 @@ const translations = {
     team_category_software: "Yazılım Geliştirme Ekibi",
     team_category_clinical: "Klinik Ekip",
     team_category_ml: "Makine Öğrenmesi Ekibi",
+    team_category_social: "Sosyal Medya Ekibi",
     software_team_category_title: "Yazılım Ekibi",
     management_team_category_title: "Yönetim",
     clinical_team_category_title: "Klinil Ekip",
     machine_learning_team_category_title: "Makine Öğrenmesi Ekibi",
+    social_media_team_category_title: "Sosyal Medya Ekibi",
 
     // Profile Page
     profile_skills: "Yetenekler ve Teknolojiler",
@@ -563,6 +567,19 @@ document.addEventListener('DOMContentLoaded', () => {
         (currentPath.endsWith('/') && linkPath === currentPath + 'index.html') ||
         (linkPath.endsWith('/') && currentPath === linkPath + 'index.html')) {
       link.classList.add('active');
+    }
+  });
+});
+
+// ===================================
+// Open External Links in New Tab
+// ===================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('a').forEach(link => {
+    if (link.hostname && link.hostname !== window.location.hostname) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
     }
   });
 });
