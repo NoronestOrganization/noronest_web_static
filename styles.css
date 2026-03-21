@@ -464,6 +464,13 @@ section {
   text-align: center;
   transition: var(--transition-normal);
   border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.summary-card .btn {
+  margin-top: auto;
 }
 
 .summary-card:hover {
