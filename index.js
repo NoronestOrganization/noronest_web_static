@@ -339,7 +339,7 @@ const translations = {
     contact_page_title: "İletişime Geçin",
     contact_page_subtitle: "Ortaklıklar, demolar veya aklınıza gelen sorular için bize ulaşın.",
     contact_info_title: "Bağlantı Kuralım",
-    contact_info_desc: "İster sağlık hizmeti sağlayıcısı, ister yatırımcı veya araştırmacı olun, sorularınızı yanıtlamak ve işbirliği fırsatlarını keşfetmek için buradayız.",
+    contact_info_desc: "Sağlık profesyoneli, yatırımcı, hasta yakını veya sadece projemiz ilginizi çektiyse sizinle tanışmayı ve düşüncelerinizi öğrenmeyi çok isteriz.  ",
     contact_address: "Adres",
     contact_email: "E-posta",
     contact_phone: "Telefon",
