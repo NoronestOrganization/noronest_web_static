@@ -18,7 +18,7 @@ const translations = {
     
     // Hero Section
     hero_badge: "AI-Powered Healthcare",
-    hero_title: "Personalizing <span>Neuro-rehabilitation</span>",
+    hero_title: "Strengthening <span>Neuro-health</span>",
     hero_subtitle: "Preventive and supportive digital solutions for neurodegenerative diseases.",
     keyword_1: "Cognitive Serious Games",
     keyword_2: "AI-Driven Solutions",
@@ -209,8 +209,8 @@ const translations = {
     
     // Hero Section
     hero_badge: "Yapay Zeka Destekli Sağlık",
-    hero_title: "<span>Nöro-rehabilitasyonu</span> Kişiselleştiriyoruz",
-    hero_subtitle: "Nörodejeneratif hastalıklar için geliştirilmiş; önleyici, destekleyici ve yapay zeka tabanlı dijital sağlık çözümlerimizle tanışın ",
+    hero_title: "<span>Nörolojik Sağlığı</span> Güçlendiriyoruz",
+    hero_subtitle: "NöroNest'in yenilikçi teknolojiler ve kişiselleştirilmiş çözümler, öneriler ile nöro-rehabilitasyon süreçlerini nasıl dönüştürdüğünü keşfedin.",
     keyword_1: "Bilişsel Ciddi Oyunlar",
     keyword_2: "Yapay Zeka Çözümleri",
     keyword_3: "Dijital Terapötikler",
