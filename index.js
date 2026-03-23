@@ -37,7 +37,9 @@ const translations = {
     card_products_desc: "Explore our suite of cognitive games, mobile applications, and clinical web panels.",
     card_contact_title: "Contact Us",
     card_contact_desc: "Ready to learn more? Get in touch with our team for partnerships and inquiries.",
-    card_cta: "Learn More",
+    card_about_cta: "Learn More",
+    card_products_cta: "Explore Solutions",
+    card_contact_cta: "Get in Touch",
     
     // Features Section
     features_title: "Why Choose NoroNest?",
@@ -210,7 +212,7 @@ const translations = {
     // Hero Section
     hero_badge: "Yapay Zeka Destekli Sağlık",
     hero_title: "<span>Nörolojik Sağlığı</span> Güçlendiriyoruz",
-    hero_subtitle: "NöroNest'in yenilikçi teknolojiler ve kişiselleştirilmiş çözümler, öneriler ile nöro-rehabilitasyon süreçlerini nasıl dönüştürdüğünü keşfedin.",
+    hero_subtitle: "Nörodejeneratif hastalıklar için geliştirilmiş; önleyici, destekleyici ve yapay zeka tabanlı dijital sağlık çözümlerimizle tanışın ",
     keyword_1: "Bilişsel Ciddi Oyunlar",
     keyword_2: "Yapay Zeka Çözümleri",
     keyword_3: "Dijital Terapötikler",
@@ -220,7 +222,7 @@ const translations = {
     float_card_2: "Hasta Odaklı",
     
     // Summary Section
-    summary_title: "Nöro Sağlığı Güçlendiriyoruz",
+    summary_title: "Nörolojik Sağlığı Güçlendiriyoruz",
     summary_subtitle: "NoroNest'in yenilikçi teknoloji ve kişiselleştirilmiş bakım yoluyla nöro-rehabilitasyonu nasıl dönüştürdüğünü keşfedin.",
     card_about_title: "Hakkımızda",
     card_about_desc: "Nörolojik hastalıkların tanı, takip, tedavi süreçlerini iyileştirme misyonumuzu yakından inceleyin.",
@@ -228,7 +230,9 @@ const translations = {
     card_products_desc: "Bilişsel oyunlar, mobil uygulamalar ve uzmanlara yönelik klinik web panellerinden oluşan dijital ekosistemimizi keşfedin.",
     card_contact_title: "İletişim",
     card_contact_desc: "Daha fazla bilgi almak ve Demo sürümüne erken erişmek ister misiniz?",
-    card_cta: "Daha Fazla Bilgi",
+    card_about_cta: "Daha Fazla Bilgi",
+    card_products_cta: "Çözümleri incele",
+    card_contact_cta: "Bize Ulaşın",
     
     // Features Section
     features_title: "Neden NöroNest?",
@@ -249,7 +253,7 @@ const translations = {
     // CTA Section
     cta_title: "Nöro-rehabilitasyon Süreçlerini Dönüştürmeye Hazır mısınız?",
     cta_subtitle: "Nörodejeneratif rahatsızlıkları olan hastaların yaşam kalitesini artırma vizyonumuza siz de ortak olun. Projemizi yakından tanımak için bizimle iletişime geçin.",
-    cta_button: "Randevu Oluştur",
+    cta_button: "Bize Ulaşın",
     
     // Footer
     footer_desc: "Daha sağlıklı bir gelecek için yapay zeka destekli nöro-rehabilitasyon çözümleri",
