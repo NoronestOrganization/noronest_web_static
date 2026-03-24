@@ -13,6 +13,7 @@ const translations = {
     nav_home: "Home",
     nav_about: "About Us",
     nav_services: "Services",
+    nav_articles: "Articles",
     nav_team: "Team",
     nav_contact: "Contact",
     
@@ -198,7 +199,19 @@ const translations = {
     about_story_p3: "Today, we're proud to be at the forefront of digital neuro-rehabilitation, helping thousands of patients improve their cognitive health through our innovative platform.",
     about_meet_team: "Meet Our Team",
     about_cta_title: "Join Us in Our Mission",
-    about_cta_subtitle: "Whether you're a healthcare provider, investor, or patient, we'd love to connect with you."
+    about_cta_subtitle: "Whether you're a healthcare provider, investor, or patient, we'd love to connect with you.",
+
+    // Articles Page
+    articles_page_title: "Articles",
+    articles_page_subtitle: "Latest research, insights, and updates on neuro-rehabilitation and cognitive health.",
+    articles_search_placeholder: "Search articles...",
+    articles_all_categories: "All",
+    articles_no_results: "No articles found matching your criteria.",
+    articles_read_more: "Read More →",
+    articles_featured: "Featured",
+    articles_min_read: "min read",
+    articles_cta_title: "Stay Updated",
+    articles_cta_subtitle: "Follow our latest research and insights on neuro-rehabilitation."
   },
   
   tr: {
@@ -206,6 +219,7 @@ const translations = {
     nav_home: "Ana Sayfa",
     nav_about: "Hakkımızda",
     nav_services: "Çözümlerimiz",
+    nav_articles: "Makaleler",
     nav_team: "Ekibimiz",
     nav_contact: "Bize Ulaşın",
     
@@ -384,7 +398,19 @@ const translations = {
     about_story_p3: "Bugün, dijital nöro-rehabilitasyonun ön saflarında olmaktan ve yenilikçi platformumuz aracılığıyla hastaların bilişsel sağlığını iyileştirmesine yardımcı olmaktan gurur duyuyoruz.",
     about_meet_team: "Ekibimizle Tanışın",
     about_cta_title: "Misyonumuza Ulaşmamızda Bize Katkı Sağlayın",
-    about_cta_subtitle: "Sağlık profesyoneli, yatırımcı, hasta yakını veya sadece projemiz ilginizi çektiyse sizinle tanışmayı ve düşüncelerinizi öğrenmeyi çok isteriz. "
+    about_cta_subtitle: "Sağlık profesyoneli, yatırımcı, hasta yakını veya sadece projemiz ilginizi çektiyse sizinle tanışmayı ve düşüncelerinizi öğrenmeyi çok isteriz. ",
+
+    // Articles Page
+    articles_page_title: "Makaleler",
+    articles_page_subtitle: "Nöro-rehabilitasyon ve bilişsel sağlık hakkında en son araştırmalar, içgörüler ve güncellemeler.",
+    articles_search_placeholder: "Makale ara...",
+    articles_all_categories: "Tümü",
+    articles_no_results: "Arama kriterlerinize uygun makale bulunamadı.",
+    articles_read_more: "Devamını Oku →",
+    articles_featured: "Öne Çıkan",
+    articles_min_read: "dk okuma",
+    articles_cta_title: "Güncel Kalın",
+    articles_cta_subtitle: "Nöro-rehabilitasyon alanındaki en son araştırma ve içgörülerimizi takip edin."
   }
 };
 
