@@ -19,7 +19,7 @@ const translations = {
     
     // Hero Section
     hero_badge: "AI-Powered Healthcare",
-    hero_title: "Personalizing <span>Neuro-rehabilitation</span>",
+    hero_title: "Strengthening <span>Neuro-health</span>",
     hero_subtitle: "Preventive and supportive digital solutions for neurodegenerative diseases.",
     keyword_1: "Cognitive Serious Games",
     keyword_2: "AI-Driven Solutions",
@@ -38,7 +38,9 @@ const translations = {
     card_products_desc: "Explore our suite of cognitive games, mobile applications, and clinical web panels.",
     card_contact_title: "Contact Us",
     card_contact_desc: "Ready to learn more? Get in touch with our team for partnerships and inquiries.",
-    card_cta: "Learn More",
+    card_about_cta: "Learn More",
+    card_products_cta: "Explore Solutions",
+    card_contact_cta: "Get in Touch",
     
     // Features Section
     features_title: "Why Choose NoroNest?",
@@ -92,15 +94,17 @@ const translations = {
     role_data_scientist: "Data Scientist",
     team_cta_title: "Join Our Team",
     team_cta_subtitle: "We're always looking for talented individuals passionate about making a difference in healthcare.",
-    team_cta_button: "Get in Touch",
+    team_cta_button: "Apply Now",
     team_category_management: "Management",
     team_category_software: "Software Development Team",
     team_category_clinical: "Clinical Team",
     team_category_ml: "Machine Learning Team",
+    team_category_social: "Social Media Team",
     software_team_category_title: "Yazılım Ekibi",
     management_team_category_title: "Yönetim",
     clinical_team_category_title: "Klinil Ekip",
     machine_learning_team_category_title: "Makine Öğrenmesi Ekibi",
+    social_media_team_category_title: "Sosyal Medya Ekibi",
 
 
     // Profile Page
@@ -176,7 +180,7 @@ const translations = {
     stat_partners: "Healthcare Partners",
     stat_experts: "Expert Team Members",
     about_vision_title: "Our Vision",
-    about_vision_subtitle: "We envision a world where cognitive health is accessible, measurable, and improvable for everyone.",
+    about_vision_subtitle: "Born in Turkey, we aim to be a pioneering neurotechnology startup recognized globally with its clinically validated solutions and making a global impact in the digital health field. With the national technologies we have developed, we aim to contribute to the future of digital neuro-rehabilitation by standardizing digital therapeutic approaches in Alzheimer's treatment and integrating our products into international healthcare systems.",
     value_innovation: "Innovation First",
     value_innovation_desc: "Continuously pushing the boundaries of what's possible in digital neuro-rehabilitation.",
     value_patient: "Patient-Centered",
@@ -217,11 +221,11 @@ const translations = {
     nav_services: "Çözümlerimiz",
     nav_articles: "Makaleler",
     nav_team: "Ekibimiz",
-    nav_contact: "İletişim",
+    nav_contact: "Bize Ulaşın",
     
     // Hero Section
     hero_badge: "Yapay Zeka Destekli Sağlık",
-    hero_title: "<span>Nöro-rehabilitasyonu</span> Kişiselleştiriyoruz",
+    hero_title: "<span>Nörolojik Sağlığı</span> Güçlendiriyoruz",
     hero_subtitle: "Nörodejeneratif hastalıklar için geliştirilmiş; önleyici, destekleyici ve yapay zeka tabanlı dijital sağlık çözümlerimizle tanışın ",
     keyword_1: "Bilişsel Ciddi Oyunlar",
     keyword_2: "Yapay Zeka Çözümleri",
@@ -232,7 +236,7 @@ const translations = {
     float_card_2: "Hasta Odaklı",
     
     // Summary Section
-    summary_title: "Nöro Sağlığı Güçlendiriyoruz",
+    summary_title: "Nörolojik Sağlığı Güçlendiriyoruz",
     summary_subtitle: "NoroNest'in yenilikçi teknoloji ve kişiselleştirilmiş bakım yoluyla nöro-rehabilitasyonu nasıl dönüştürdüğünü keşfedin.",
     card_about_title: "Hakkımızda",
     card_about_desc: "Nörolojik hastalıkların tanı, takip, tedavi süreçlerini iyileştirme misyonumuzu yakından inceleyin.",
@@ -240,7 +244,9 @@ const translations = {
     card_products_desc: "Bilişsel oyunlar, mobil uygulamalar ve uzmanlara yönelik klinik web panellerinden oluşan dijital ekosistemimizi keşfedin.",
     card_contact_title: "İletişim",
     card_contact_desc: "Daha fazla bilgi almak ve Demo sürümüne erken erişmek ister misiniz?",
-    card_cta: "Daha Fazla Bilgi",
+    card_about_cta: "Daha Fazla Bilgi",
+    card_products_cta: "Çözümleri incele",
+    card_contact_cta: "Bize Ulaşın",
     
     // Features Section
     features_title: "Neden NöroNest?",
@@ -261,7 +267,7 @@ const translations = {
     // CTA Section
     cta_title: "Nöro-rehabilitasyon Süreçlerini Dönüştürmeye Hazır mısınız?",
     cta_subtitle: "Nörodejeneratif rahatsızlıkları olan hastaların yaşam kalitesini artırma vizyonumuza siz de ortak olun. Projemizi yakından tanımak için bizimle iletişime geçin.",
-    cta_button: "Randevu Oluştur",
+    cta_button: "Bize Ulaşın",
     
     // Footer
     footer_desc: "Daha sağlıklı bir gelecek için yapay zeka destekli nöro-rehabilitasyon çözümleri",
@@ -294,15 +300,17 @@ const translations = {
     role_data_scientist: "Veri Bilimci",
     team_cta_title: "Ekibimize Katılın",
     team_cta_subtitle: "Sağlık alanında fark yaratmaya tutkulu yetenekli bireyler arıyoruz.",
-    team_cta_button: "İletişime Geç",
+    team_cta_button: "Hemen Başvur",
     team_category_management: "Yönetim",
     team_category_software: "Yazılım Geliştirme Ekibi",
     team_category_clinical: "Klinik Ekip",
     team_category_ml: "Makine Öğrenmesi Ekibi",
+    team_category_social: "Sosyal Medya Ekibi",
     software_team_category_title: "Yazılım Ekibi",
     management_team_category_title: "Yönetim",
     clinical_team_category_title: "Klinil Ekip",
     machine_learning_team_category_title: "Makine Öğrenmesi Ekibi",
+    social_media_team_category_title: "Sosyal Medya Ekibi",
 
     // Profile Page
     profile_skills: "Yetenekler ve Teknolojiler",
@@ -313,52 +321,46 @@ const translations = {
     services_page_title: "Çözümlerimiz",
     services_page_subtitle: "Nöro-rehabilitasyonun her aşamasını desteklemek için tasarlanmış kapsamlı dijital çözümler",
     service_games_title: "Önleyici ve Destekleyici Oyunlar",
-    service_games_desc: "Sinir yollarını çalıştırmak ve güçlendirmek için tasarlanmış ilgi çekici bilişsel ciddi oyunlar. Bilimsel olarak doğrulanmış oyunlarımız, beyin sağlığı için kritik olan bellek, dikkat, yönetici işlev ve diğer bilişsel alanları hedefler.",
-    service_mobile_title: "Mobil Uygulama",
-    service_mobile_desc: "Kişiselleştirilmiş nöro-rehabilitasyon programınıza her zaman, her yerden erişin. Mobil uygulamamız, bilişsel egzersizlere, ilerleme takibine ve sağlık ekibinizle iletişime kesintisiz erişim sağlar.",
-    service_panel_title: "Klinik Web Paneli",
-    service_panel_desc: "Sağlık profesyonellerinin hasta ilerlemesini izlemesi, tedavi planlarını özelleştirmesi ve detaylı analizlere erişmesi için kapsamlı bir kontrol paneli. Web panelimiz, makine öğrenimi algoritmalarıyla desteklenen eyleme geçirilebilir içgörüler sağlar.",
+    service_games_desc: "Sağlıklı bireyler için önleyici; Alzheimer hastaları için semptom destekleyici klinik testlere ve EEG sinyallerine göre kişiselleştirilmiş 2D mobil/3D VR destekli ciddi oyunlar (serious games) geliştiriyoruz. Modüler oyunlar hafıza, dikkat, duygu durumu ve yürütücü işlevleri (planlama, odaklanma, çalışma belleği, dürtü kontrolü) becerilerini geliştirecek ve değişimini ölçecek şekilde geliştirilmektedir.",
+    service_mobile_title: "Mobil Uygulama (Çok Yakında)",
+    service_mobile_desc: "Kişiselleştirilmiş nöro-rehabilitasyon programınıza dilediğiniz zaman, dilediğiniz yerden ulaşabileceksiniz. Mobil uygulamamızla; bilişsel egzersizlere, gelişim takibine, hastane ve eczane araştırmalarına, bakım verme süreçleri hakkındaki blog yazıları ve uzman videolarına kesintisiz erişim sağlayabileceksiniz.",
+    service_panel_title: "Klinik Web Paneli (Çok Yakında)",
+    service_panel_desc: "Sağlık profesyonellerinin hasta gelişimini izleyebileceği, tedavi planlarını özelleştirebileceği ve detaylı analizlere ulaşabileceği kapsamlı bir kontrol paneli ve raporlama hizmeti sunacağız. ",
     service_explore: "Oyunları Keşfet →",
     service_coming_soon: "Yakında",
-    feature_memory: "Bellek Eğitimi",
+    feature_memory: "Hafıza Antrenmanları",
     feature_attention: "Dikkat Egzersizleri",
-    feature_executive: "Yönetici İşlev",
-    feature_adaptive: "Uyarlanabilir Zorluk",
+    feature_executive: "Yürütücü İşlev Gelişimi",
+    feature_adaptive: "Adaptif Zorluk Seviyesi",
+    feature_emotional: "Duygu Durumu",
     feature_ios: "iOS ve Android",
     feature_offline: "Çevrimdışı Mod",
     feature_notifications: "Akıllı Hatırlatıcılar",
-    feature_sync: "Bulut Senkronizasyonu",
-    feature_analytics: "Gerçek Zamanlı Analiz",
-    feature_reports: "Özel Raporlar",
+    feature_sync: "Randevu Takibi",
+    feature_analytics: "Eş Zamanlı (Real-time) Analizler",
+    feature_reports: "Raporlama",
     feature_patients: "Hasta Yönetimi",
-    feature_ai: "Yapay Zeka İçgörüleri",
     services_features_title: "Platform Özellikleri",
     services_features_subtitle: "En iyi nöro-rehabilitasyon deneyimini sunmak için son teknoloji ile inşa edildi.",
-    platform_ai: "Yapay Zeka Kişiselleştirme",
-    platform_ai_desc: "Makine öğrenimi algoritmaları, egzersizleri her hastanın benzersiz bilişsel profiline uyarlar.",
-    platform_tracking: "İlerleme Takibi",
-    platform_tracking_desc: "Zaman içindeki bilişsel gelişmeleri izlemek için kapsamlı metrikler ve görselleştirmeler.",
-    platform_security: "Kurumsal Güvenlik",
-    platform_security_desc: "Hasta veri koruması için uçtan uca şifreleme ile HIPAA uyumlu altyapı.",
-    platform_cloud: "Bulut Tabanlı Platform",
-    platform_cloud_desc: "Otomatik güncellemeler ve kesintisiz cihaz senkronizasyonu ile her yerden erişim.",
+    platform_ai: "Yapay Zeka Destekli Kişiselleştirme",
+    platform_ai_desc: "Makine öğrenimi algoritmaları, egzersizleri her hastanın benzersiz bilişsel profiline göre öneriler oluşturulur ve sürekli olarak takip edilir.",
+    platform_tracking: "Gelişim Takibi",
+    platform_tracking_desc: "Bilişsel iyileşmeleri zaman içinde oyun içinde toplanan metrikler ve nöropsikometrik testler üzerinden oluşturulan raporlarla izlemek için kapsamlı raporlama ve görselleştirmeler.",
     platform_collaboration: "Klinik İşbirliği",
-    platform_collaboration_desc: "Sağlık ekiplerinin bakımı koordine etmesi ve hasta içgörülerini güvenli bir şekilde paylaşması için araçlar.",
-    platform_reports: "Detaylı Raporlar",
-    platform_reports_desc: "Klinik dokümantasyon ve sigorta amaçlı kapsamlı raporlar oluşturun.",
+    platform_collaboration_desc: "Sağlık ekiplerinin hasta bakımını koordine etmesi ve verileri güvenle paylaşması için ortak araçlar geliştiriyoruz.",
     services_cta_title: "Başlamaya Hazır mısınız?",
-    services_cta_subtitle: "NoroNest'in nöro-rehabilitasyon ihtiyaçlarınızı nasıl destekleyebileceğini öğrenmek için bizimle iletişime geçin.",
+    services_cta_subtitle: "Sağlık profesyoneli, yatırımcı, hasta yakını veya sadece projemiz ilginizi çektiyse sizinle tanışmayı ve düşüncelerinizi öğrenmeyi çok isteriz.",
     
     // Contact Page
     contact_page_title: "İletişime Geçin",
     contact_page_subtitle: "Ortaklıklar, demolar veya aklınıza gelen sorular için bize ulaşın.",
     contact_info_title: "Bağlantı Kuralım",
-    contact_info_desc: "İster sağlık hizmeti sağlayıcısı, ister yatırımcı veya araştırmacı olun, sorularınızı yanıtlamak ve işbirliği fırsatlarını keşfetmek için buradayız.",
+    contact_info_desc: "Sağlık profesyoneli, yatırımcı, hasta yakını veya sadece projemiz ilginizi çektiyse sizinle tanışmayı ve düşüncelerinizi öğrenmeyi çok isteriz.  ",
     contact_address: "Adres",
     contact_email: "E-posta",
     contact_phone: "Telefon",
     contact_hours: "Çalışma Saatleri",
-    contact_hours_value: "Pazartesi - Cuma: 9:00 - 18:00",
+    contact_hours_value: "Her Gün: 9:00 - 18:00",
     form_firstname: "Ad",
     form_lastname: "Soyad",
     form_email: "E-posta Adresi",
@@ -371,13 +373,13 @@ const translations = {
     about_page_title: "NöroNest Hakkında",
     about_page_subtitle: "İnovasyon ve şefkat yoluyla nöro-rehabilitasyonun geleceğine öncülük ediyoruz.",
     about_mission_title: "Misyonumuz",
-    about_mission_p1: "NoroNest olarak, herkesin kişiselleştirilmiş, etkili nöro-rehabilitasyon bakımına erişimi hak ettiğine inanıyoruz. Misyonumuz, yenilikçi yapay zeka destekli çözümlerle nörodejeneratif hastalıkların yönetim biçimini dönüştürmektir.",
-    about_mission_p2: "Son teknolojiyi klinik uzmanlıkla birleştirerek, bilişsel sağlığı destekleyen ve hem hastaları hem de sağlık hizmeti sağlayıcılarını güçlendiren ilgi çekici, bilimsel olarak doğrulanmış araçlar oluşturuyoruz.",
+    about_mission_p1: "NöroNest olarak misyonumuz; başta Alzheimer olmak üzere nörodejeneratif hastalıklarla mücadele eden bireylerin ve onlara destek olan ailelerinin yaşam kalitesini artırmaktır. Bizler yalnızca teknolojik bir ürün değil; klinik doğruluğu yüksek, empatiyle tasarlanmış ve insana dokunan kişiselleştirilmiş bir dijital sağlık ekosistemi inşa etmeyi hedefliyoruz.",
+    about_mission_p2: "Hastalarımız ve sağlık sistemleri üzerinde çok boyutlu (genetik, psikolojik, ekonomik) etkileri olan kronik sürece karşı; erişilebilir, yenilikçi ve bilimsel temelli nöro-rehabilitasyon çözümleri sunarak toplumun her kesimi için umut ve fayda yaratmayı hedefliyoruz.",
     stat_sessions: "Tamamlanan Seans",
     stat_partners: "Sağlık Ortağı",
     stat_experts: "Uzman Ekip Üyesi",
     about_vision_title: "Vizyonumuz",
-    about_vision_subtitle: "Bilişsel sağlığın herkes için erişilebilir, ölçülebilir ve geliştirilebilir olduğu bir dünya hayal ediyoruz.",
+    about_vision_subtitle: "Türkiye’den doğan, klinik geçerliliği kanıtlanmış çözümleriyle global ölçekte tanınan ve dijital sağlık alanında küresel çapta fark yaratan öncü bir nöroteknoloji girişimi olmayı hedefliyoruz. Geliştirdiğimiz milli teknolojilerle Alzheimer tedavisinde dijital terapötik yaklaşımların standartlaşmasına ve ürünlerimizi uluslararası sağlık sistemlerine entegre ederek dijital nöro-rehabilitasyonun geleceğine katkı sunmayı hedefliyoruz. ",
     value_innovation: "Önce İnovasyon",
     value_innovation_desc: "Dijital nöro-rehabilitasyonda mümkün olanın sınırlarını sürekli zorlamak.",
     value_patient: "Hasta Odaklı",
@@ -395,8 +397,8 @@ const translations = {
     about_story_p2: "Nörologlar, yapay zeka araştırmacıları, oyun geliştiricileri ve sağlık profesyonellerinden oluşan ekibimiz, sağlık sistemindeki kritik bir boşluğu, kişiselleştirilmiş ve teknoloji odaklı rehabilitasyon araçlarının eksikliğini, gidermek için bir araya geldi.",
     about_story_p3: "Bugün, dijital nöro-rehabilitasyonun ön saflarında olmaktan ve yenilikçi platformumuz aracılığıyla hastaların bilişsel sağlığını iyileştirmesine yardımcı olmaktan gurur duyuyoruz.",
     about_meet_team: "Ekibimizle Tanışın",
-    about_cta_title: "Misyonumuza Katılın",
-    about_cta_subtitle: "İster sağlık hizmeti sağlayıcısı, ister yatırımcı veya hasta olun, sizinle bağlantı kurmak isteriz.",
+    about_cta_title: "Misyonumuza Ulaşmamızda Bize Katkı Sağlayın",
+    about_cta_subtitle: "Sağlık profesyoneli, yatırımcı, hasta yakını veya sadece projemiz ilginizi çektiyse sizinle tanışmayı ve düşüncelerinizi öğrenmeyi çok isteriz. ",
 
     // Articles Page
     articles_page_title: "Makaleler",
@@ -595,6 +597,19 @@ document.addEventListener('DOMContentLoaded', () => {
         (currentPath.endsWith('/') && linkPath === currentPath + 'index.html') ||
         (linkPath.endsWith('/') && currentPath === linkPath + 'index.html')) {
       link.classList.add('active');
+    }
+  });
+});
+
+// ===================================
+// Open External Links in New Tab
+// ===================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('a').forEach(link => {
+    if (link.hostname && link.hostname !== window.location.hostname) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
     }
   });
 });
