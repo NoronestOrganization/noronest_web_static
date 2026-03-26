@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NöroNest Article">
+  <title>NöroNest - Article</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../public/img/noronest-logo.png">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../public/img/noronest-logo.png" alt="NöroNest Logo" onerror="this.style.display='none'">
+        <span>NöroNest</span>
+      </a>
+      
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+        <li><a href="../about/index.html" class="nav-link" data-i18n="nav_about">About Us</a></li>
+        <li><a href="../products/index.html" class="nav-link" data-i18n="nav_services">Services</a></li>
+        <li><a href="index.html" class="nav-link active" data-i18n="nav_articles">Articles</a></li>
+        <li><a href="../team/index.html" class="nav-link" data-i18n="nav_team">Team</a></li>
+        <li><a href="../contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang="tr">TR</button>
+          <button class="lang-btn active" data-lang="en">EN</button>
+        </div>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <section class="page-header page-header-compact">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html" data-i18n="nav_home">Home</a>
+        <span>/</span>
+        <a href="index.html" data-i18n="nav_articles">Articles</a>
+        <span>/</span>
+        <span id="breadcrumbTitle" class="breadcrumb-current">...</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <section class="article-page-section">
+    <div class="container">
+      <div class="article-page-layout">
+        <!-- Main Content -->
+        <article class="article-page-main" id="articleMain">
+          <div class="article-page-loading">
+            <div class="loading-spinner"></div>
+            <p>Loading...</p>
+          </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="article-page-sidebar" id="articleSidebar">
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            <img src="../public/img/noronest-logo.png" alt="NöroNest Logo" onerror="this.style.display='none'">
+            <span>NöroNest</span>
+          </a>
+          <p data-i18n="footer_desc">AI-driven neuro-rehabilitation solutions for a healthier tomorrow.</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/company/n%C3%B6ronest" aria-label="LinkedIn" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/noronest_/" aria-label="Instagram" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61579961213899" aria-label="Facebook" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4 data-i18n="footer_company">Company</h4>
+          <ul>
+            <li><a href="../about/index.html" data-i18n="nav_about">About Us</a></li>
+            <li><a href="../team/index.html" data-i18n="nav_team">Our Team</a></li>
+            <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4 data-i18n="footer_solutions">Solutions</h4>
+          <ul>
+            <li><a href="../products/index.html#games" data-i18n="service_games">Cognitive Games</a></li>
+            <li><a href="../products/index.html#mobile" data-i18n="service_mobile">Mobile App</a></li>
+            <li><a href="../products/index.html#panel" data-i18n="service_panel">Web Panel</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4 data-i18n="footer_legal">Legal</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
+            <li><a href="#" data-i18n="footer_terms">Terms of Service</a></li>
+            <li><a href="#" data-i18n="footer_cookies">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 NöroNest. <span data-i18n="footer_rights">All rights reserved.</span></p>
+        <div class="footer-bottom-links">
+          <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer_terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../index.js"></script>
+  <script src="articles_data.js"></script>
+  <script>
+    // ===================================
+    // Article Detail Page Logic
+    // ===================================
+
+    const CATEGORY_IMAGES = {
+      'Haklar & Destek': [
+        'https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1450101499163-c8848e66ad76?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1521791055366-0d553872125f?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&h=400&fit=crop'
+      ],
+      'Sağlık & Yaşam': [
+        'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&h=400&fit=crop'
+      ],
+      'Rehber': [
+        'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=900&h=400&fit=crop'
+      ],
+      'Bakım & Destek': [
+        'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=900&h=400&fit=crop'
+      ],
+      'Teknoloji': [
+        'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&h=400&fit=crop'
+      ],
+      'Tıbbi Bilgi': [
+        'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=900&h=400&fit=crop'
+      ],
+      'Terapi': [
+        'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=900&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?w=900&h=400&fit=crop'
+      ]
+    };
+    const DEFAULT_IMAGES = [
+      'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&h=400&fit=crop'
+    ];
+    function getArticleImage(article) {
+      if (article.image_url) return article.image_url;
+      const pool = CATEGORY_IMAGES[article.category] || DEFAULT_IMAGES;
+      const idx = (article.id - 1) % pool.length;
+      return pool[idx];
+    }
+
+    function formatDate(dateStr) {
+      if (!dateStr) return '';
+      const d = new Date(dateStr);
+      const lang = localStorage.getItem('language') || 'en';
+      return d.toLocaleDateString(lang === 'tr' ? 'tr-TR' : 'en-US', {
+        year: 'numeric', month: 'long', day: 'numeric'
+      });
+    }
+
+    function init() {
+      const params = new URLSearchParams(window.location.search);
+      const articleId = parseInt(params.get('id'));
+      if (!articleId || typeof ARTICLES_DATA === 'undefined') {
+        window.location.href = 'index.html';
+        return;
+      }
+
+      const article = ARTICLES_DATA.find(a => a.id === articleId);
+      if (!article) {
+        window.location.href = 'index.html';
+        return;
+      }
+
+      renderArticle(article);
+      renderSidebar(article);
+
+      // Update page title
+      document.title = `${article.title} - NöroNest`;
+      document.querySelector('meta[name="description"]').content = article.excerpt || article.title;
+    }
+
+    function renderArticle(article) {
+      const lang = localStorage.getItem('language') || 'en';
+      const readLabel = lang === 'tr' ? 'dk okuma' : 'min read';
+      const imgSrc = getArticleImage(article);
+
+      // Breadcrumb
+      const breadcrumb = document.getElementById('breadcrumbTitle');
+      breadcrumb.textContent = article.title.length > 50 ? article.title.substring(0, 50) + '...' : article.title;
+
+      // Main content
+      const main = document.getElementById('articleMain');
+      main.innerHTML = `
+        <div class="article-page-hero">
+          <img src="${imgSrc}" alt="${article.title}" onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&h=400&fit=crop'">
+        </div>
+        <div class="article-page-header">
+          ${article.category ? `<span class="article-category">${article.category}</span>` : ''}
+          <h1>${article.title}</h1>
+          <div class="article-meta">
+            <span class="article-author">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              ${article.author || 'NöroNest'}
+            </span>
+            <span class="article-date">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              ${formatDate(article.published_at || article.created_at)}
+            </span>
+            ${article.read_time ? `<span class="article-read-time">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              ${article.read_time} ${readLabel}
+            </span>` : ''}
+          </div>
+        </div>
+        <div class="article-detail-content">${article.content || ''}</div>
+        ${article.tags ? `<div class="article-tags">${article.tags.split(',').map(t => `<span class="article-tag">${t.trim()}</span>`).join('')}</div>` : ''}
+        ${article.author ? `<div class="article-author-box">
+          <div class="author-avatar">${article.author.split(' ').map(n => n[0]).join('').substring(0, 2)}</div>
+          <div class="author-info">
+            <div class="author-name">${article.author}</div>
+            <div class="author-role">NöroNest İçerik Ekibi</div>
+          </div>
+        </div>` : ''}
+      `;
+    }
+
+    function renderSidebar(currentArticle) {
+      const lang = localStorage.getItem('language') || 'en';
+      const readLabel = lang === 'tr' ? 'dk okuma' : 'min read';
+      const sidebarTitle = lang === 'tr' ? 'Diğer Makaleler' : 'Recommended';
+
+      // Get 4 recommended articles (same category first, then others)
+      const sameCategory = ARTICLES_DATA.filter(a => 
+        a.id !== currentArticle.id && a.content && a.content.length > 0 && a.category === currentArticle.category
+      );
+      const others = ARTICLES_DATA.filter(a => 
+        a.id !== currentArticle.id && a.content && a.content.length > 0 && a.category !== currentArticle.category
+      );
+      const recommended = [...sameCategory, ...others].slice(0, 4);
+
+      const sidebar = document.getElementById('articleSidebar');
+      sidebar.innerHTML = `
+        <div class="sidebar-sticky">
+          <h3 class="sidebar-title">${sidebarTitle}</h3>
+          ${recommended.map(r => {
+            const rImg = getArticleImage(r);
+            return `
+              <a href="article.html?id=${r.id}" class="sidebar-card">
+                <img src="${rImg}" alt="${r.title}" onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde675bc?w=300&h=200&fit=crop'">
+                <div class="sidebar-card-body">
+                  <span class="sidebar-card-category">${r.category || ''}</span>
+                  <h4>${r.title}</h4>
+                  <span class="sidebar-card-meta">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    ${r.read_time || 3} ${readLabel}
+                  </span>
+                </div>
+              </a>
+            `;
+          }).join('')}
+          <a href="index.html" class="sidebar-back-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            ${lang === 'tr' ? 'Tüm Makaleler' : 'All Articles'}
+          </a>
+        </div>
+      `;
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>

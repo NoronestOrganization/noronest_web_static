@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NoroNest Articles - Latest research, insights, and updates on neuro-rehabilitation and cognitive health.">
-  <title>NoroNest - Articles</title>
+  <meta name="description" content="NöroNest Articles - Latest research, insights, and updates on neuro-rehabilitation and cognitive health.">
+  <title>NöroNest - Articles</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../public/img/noronest-logo.png">
 </head>
 <body>
   <!-- Navigation -->
@@ -16,7 +17,7 @@
     <div class="container">
       <a href="../index.html" class="nav-logo">
         <img src="../public/img/noronest-logo.png" alt="NöroNest Logo" onerror="this.style.display='none'">
-        <span>NoroNest</span>
+        <span>NöroNest</span>
       </a>
       
       <ul class="nav-menu">
@@ -130,7 +131,7 @@
         <div class="footer-brand">
           <a href="../index.html" class="nav-logo">
             <img src="../public/img/noronest-logo.png" alt="NöroNest Logo" onerror="this.style.display='none'">
-            <span>NoroNest</span>
+            <span>NöroNest</span>
           </a>
           <p data-i18n="footer_desc">AI-driven neuro-rehabilitation solutions for a healthier tomorrow.</p>
           <div class="footer-social">
@@ -185,7 +186,7 @@
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2024 NoroNest. <span data-i18n="footer_rights">All rights reserved.</span></p>
+        <p>&copy; 2024 NöroNest. <span data-i18n="footer_rights">All rights reserved.</span></p>
         <div class="footer-bottom-links">
           <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
           <a href="#" data-i18n="footer_terms">Terms of Service</a>
@@ -294,11 +295,11 @@
         articlesGrid.innerHTML = filtered.map(renderArticleCard).join('');
       }
 
-      // Add click listeners
+      // Add click listeners - navigate to full article page
       document.querySelectorAll('[data-article-id]').forEach(card => {
         card.addEventListener('click', () => {
           const id = parseInt(card.dataset.articleId);
-          openArticle(id);
+          window.location.href = `article.html?id=${id}`;
         });
       });
     }
@@ -395,7 +396,7 @@
             <div class="article-meta">
               <span class="article-author">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                ${article.author || 'NoroNest'}
+                ${article.author || 'NöroNest'}
               </span>
               <span class="article-date">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
@@ -430,7 +431,7 @@
             <div class="article-meta">
               <span class="article-author">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                ${article.author || 'NoroNest'}
+                ${article.author || 'NöroNest'}
               </span>
               ${article.read_time ? `<span class="article-read-time">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
@@ -452,33 +453,58 @@
       const readLabel = lang === 'tr' ? 'dk okuma' : 'min read';
       const imgSrc = getArticleImage(article);
 
+      // Get 4 recommended articles (excluding current)
+      const recommended = allArticles
+        .filter(a => a.id !== id && a.content && a.content.length > 0)
+        .slice(0, 4);
+
+      const sidebarLabel = lang === 'tr' ? 'Diğer Makaleler' : 'Recommended';
+
       modalBody.innerHTML = `
-        <div class="article-detail">
-          <img class="article-detail-img" src="${imgSrc}" alt="${article.title}" onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&h=400&fit=crop'">
-          <div class="article-detail-header">
-            ${article.category ? `<span class="article-category">${article.category}</span>` : ''}
-            <h1>${article.title}</h1>
-            <div class="article-meta">
-              <span class="article-author">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                ${article.author || 'NoroNest'}
-              </span>
-              <span class="article-date">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                ${formatDate(article.published_at || article.created_at)}
-              </span>
-              ${article.read_time ? `<span class="article-read-time">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                ${article.read_time} ${readLabel}
-              </span>` : ''}
-              <span class="article-views">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                ${article.views || 0}
-              </span>
+        <div class="article-detail-layout">
+          <div class="article-detail-main">
+            <img class="article-detail-img" src="${imgSrc}" alt="${article.title}" onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&h=400&fit=crop'">
+            <div class="article-detail-header">
+              ${article.category ? `<span class="article-category">${article.category}</span>` : ''}
+              <h1>${article.title}</h1>
+              <div class="article-meta">
+                <span class="article-author">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                  ${article.author || 'NöroNest'}
+                </span>
+                <span class="article-date">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  ${formatDate(article.published_at || article.created_at)}
+                </span>
+                ${article.read_time ? `<span class="article-read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  ${article.read_time} ${readLabel}
+                </span>` : ''}
+              </div>
             </div>
+            <div class="article-detail-content">${article.content || ''}</div>
+            ${article.tags ? `<div class="article-tags">${article.tags.split(',').map(t => `<span class="article-tag">${t.trim()}</span>`).join('')}</div>` : ''}
+            ${article.author ? `<div class="article-author-box">
+              <div class="author-avatar">${article.author.split(' ').map(n => n[0]).join('').substring(0, 2)}</div>
+              <div class="author-info">
+                <div class="author-name">${article.author}</div>
+                <div class="author-role">NöroNest İçerik Ekibi</div>
+              </div>
+            </div>` : ''}
           </div>
-          <div class="article-detail-content">${article.content || ''}</div>
-          ${article.tags ? `<div class="article-tags">${article.tags.split(',').map(t => `<span class="article-tag">${t.trim()}</span>`).join('')}</div>` : ''}
+          <aside class="article-detail-sidebar">
+            <h3 class="sidebar-title">${sidebarLabel}</h3>
+            ${recommended.map(r => `
+              <div class="sidebar-article" onclick="openArticle(${r.id})">
+                <img src="${getArticleImage(r)}" alt="${r.title}" onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde675bc?w=300&h=200&fit=crop'">
+                <div class="sidebar-article-info">
+                  <span class="sidebar-article-category">${r.category || ''}</span>
+                  <h4>${r.title}</h4>
+                  <span class="sidebar-article-meta">${r.read_time || 3} ${readLabel}</span>
+                </div>
+              </div>
+            `).join('')}
+          </aside>
         </div>
       `;
 
