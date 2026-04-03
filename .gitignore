@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+package.json
+package-lock.json
+
+# Source/working files
+*.xlsx
+*.pdf
+parse_xlsx.js
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
