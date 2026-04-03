@@ -110,6 +110,7 @@ const translations = {
     profile_skills: "Skills & Technologies",
     profile_cta_title: "Want to Work Together?",
     profile_cta_subtitle: "Get in touch with our team to learn more about collaboration opportunities.",
+    selma_bio: "After completing her undergraduate studies at Izmir University of Economics, Department of Psychology, she completed her master's degree in Cognitive Systems at Ulm University. During her undergraduate and graduate studies, she took part in research conducted in the fields of attention, cognitive ergonomics, and interface design. She aims to translate her theoretical knowledge into practical applications and focuses on enhancing human experience in the digital world in the fields of user-centered design and cognitive ergonomics.",
     
     // Services Page
     services_page_title: "Our Solutions",
@@ -302,6 +303,7 @@ const translations = {
     profile_skills: "Yetenekler ve Teknolojiler",
     profile_cta_title: "Birlikte Çalışmak İster misiniz?",
     profile_cta_subtitle: "İşbirliği fırsatları hakkında daha fazla bilgi edinmek için ekibimizle iletişime geçin.",
+    selma_bio: "İzmir Ekonomi Üniversitesi Psikoloji Bölümü’nden lisans eğitimini tamamladıktan sonra, Ulm Üniversitesi Bilişsel Sistemler alanında yüksek lisansını tamamlamıştır. Lisans ve yüksek lisans sürecinde dikkat, bilişsel ergonomi ve arayüz tasarımı alanlarında yürütülen araştırmalarda görev almıştır. Teorik bilgisini pratik uygulamalara dönüştürmeyi amaçlamakta ve kullanıcı odaklı tasarım ile bilişsel ergonomi alanlarında dijital dünyada insan deneyimini geliştirmeye odaklanmaktadır.",
     
     // Services Page
     services_page_title: "Çözümlerimiz",
