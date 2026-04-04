@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Confidential Demo</title>
+    <title>Demo</title>
     <style>
       body {
         margin: 0;
@@ -16,31 +16,31 @@
         font-family: sans-serif;
       }
 
-      /* The container that holds both the game and the watermark */
       .game-container {
         position: relative;
-        width: 1920px; 
-        height: 1080px;
+        width: 100%;           
+        max-width: 960px;       
+        aspect-ratio: 960 / 600; 
         box-shadow: 0 0 20px rgba(0,0,0,0.8);
       }
 
-      /* The actual game canvas */
       #unity-canvas {
         width: 100%;
         height: 100%;
         display: block;
       }
 
+      /* The personalized watermark */
       #watermark {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: rgba(255, 255, 255, 0.3); /* 30% opaque white text */
-        font-size: 3rem;
+        color: rgba(255, 255, 255, 0.3); 
+        font-size: clamp(1.5rem, 4vw, 3rem); 
         font-weight: bold;
         text-align: center;
-        pointer-events: none;
+        pointer-events: none; 
         z-index: 10; 
         user-select: none; 
         white-space: nowrap;
@@ -56,19 +56,15 @@
       <div id="watermark">Loading...</div>
     </div>
 
-    <!-- Watermark Script -->
     <script>
-      // Read the URL for the '?tester=' parameter
       const urlParams = new URLSearchParams(window.location.search);
       const testerName = urlParams.get('tester');
       const watermarkElement = document.getElementById('watermark');
 
-      // If a name is in the URL, show it. Otherwise, show a warning.
       if (testerName) {
-          watermarkElement.innerText = "CONFIDENTIAL - " + testerName;
+          watermarkElement.innerText = "Nöronest Demo - " + testerName;
       } else {
-          watermarkElement.innerText = "UNAUTHORIZED COPY";
-          // document.getElementById('unity-canvas').style.display = 'none';
+          watermarkElement.innerText = "HATALI KULLANICI";
       }
     </script>
 
@@ -79,9 +75,9 @@
       
       var buildUrl = "Build";
       var config = {
-        dataUrl: buildUrl + "/2.data",         
+        dataUrl: buildUrl + "/2.data",          
         frameworkUrl: buildUrl + "/2.framework.js",
-        codeUrl: buildUrl + "/2.wasm",        
+        codeUrl: buildUrl + "/2.wasm",          
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Noro",
         productName: "AlzheimerApp",
