@@ -71,16 +71,16 @@
       }
     </script>
 
-    <!-- Unity Loader Script updated for Build "2" with Brotli Compression -->
+   <!-- Unity Loader Script updated for .unityweb extensions -->
     <script src="Build/2.loader.js"></script>
     <script>
       var canvas = document.querySelector("#unity-canvas");
       
       var buildUrl = "Build";
       var config = {
-        dataUrl: buildUrl + "/2.data.br",          
-        frameworkUrl: buildUrl + "/2.framework.js.br", /* Note: If this file fails to load, remove the .br here */
-        codeUrl: buildUrl + "/2.wasm.br",          
+        dataUrl: buildUrl + "/2.data.unityweb",         /* Added .unityweb */
+        frameworkUrl: buildUrl + "/2.framework.js.unityweb", /* Added .unityweb */
+        codeUrl: buildUrl + "/2.wasm.unityweb",         /* Added .unityweb */
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Noro",
         productName: "AlzheimerApp",
@@ -88,7 +88,6 @@
       };
 
       createUnityInstance(canvas, config, (progress) => {
-          // Optional loading bar logic can go here
       }).then((unityInstance) => {
           console.log("Game loaded successfully.");
       }).catch((message) => {
