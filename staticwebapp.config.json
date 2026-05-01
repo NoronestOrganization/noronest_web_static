@@ -1,0 +1,27 @@
+{
+  "routes": [
+    {
+      "route": "/gamedemo/Arrow/Build/NoronestBuilds.data.br",
+      "headers": {
+        "Content-Encoding": "br"
+      }
+    },
+    {
+      "route": "/gamedemo/Arrow/Build/NoronestBuilds.wasm.br",
+      "headers": {
+        "Content-Encoding": "br"
+      }
+    },
+    {
+      "route": "/gamedemo/Arrow/Build/NoronestBuilds.framework.js.br",
+      "headers": {
+        "Content-Encoding": "br"
+      }
+    }
+  ],
+  "mimeTypes": {
+    ".wasm.br": "application/wasm",
+    ".js.br": "application/javascript",
+    ".data.br": "application/octet-stream"
+  }
+}
