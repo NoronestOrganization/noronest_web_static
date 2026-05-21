@@ -19,13 +19,13 @@ const translations = {
     
     // Hero Section
     hero_badge: "AI-Powered Healthcare",
-    hero_title: "Strengthening <span>Neuro-health</span>",
+    hero_title: "Measure & Improve Your <span>Brain Performance</span> with Mobile Games",
     hero_subtitle: "Preventive and supportive digital solutions for neurodegenerative diseases.",
     keyword_1: "Cognitive Serious Games",
     keyword_2: "AI-Driven Solutions",
     keyword_3: "Digital Therapeutics",
-    hero_cta_primary: "Explore Solutions",
-    hero_cta_secondary: "Get in Touch",
+    hero_cta_primary: "Want to Be an Early Adopter?",
+    hero_cta_secondary: "Enter Your Email",
     float_card_1: "Real-time Analytics",
     float_card_2: "Patient-Centered",
     
@@ -59,9 +59,20 @@ const translations = {
     feature_6_desc: "HIPAA-compliant infrastructure ensuring the highest standards of patient data protection.",
     
     // CTA Section
-    cta_title: "Ready to Transform Neuro-rehabilitation?",
-    cta_subtitle: "Join us in our mission to improve the lives of patients with neurodegenerative diseases.",
-    cta_button: "Schedule a Demo",
+    cta_title: "Want to Be an Early Adopter?",
+    cta_subtitle: "Be among the first to experience NöroNest. Enter your email to get early access.",
+    cta_button: "Sign Up",
+    cta_email_placeholder: "Enter your email address",
+
+    // How It Works Section
+    how_it_works_title: "How It Works",
+    how_it_works_subtitle: "Get started with NöroNest in three simple steps.",
+    step_1_title: "We Assess",
+    step_1_desc: "We create your current brain health and skills profile using cognitive tests used in neurology clinics. Just 15 minutes and completely digital.",
+    step_2_title: "We Recommend Solutions",
+    step_2_desc: "A neurologist-approved, research-backed exercise plan is automatically created based on your profile and complaints.",
+    step_3_title: "We Personalize",
+    step_3_desc: "We measure your progress based on in-game performance and continuously update recommendations in real-time. As you improve, NöroNest evolves with you.",
     
     // Footer
     footer_desc: "AI-driven neuro-rehabilitation solutions for a healthier tomorrow.",
@@ -226,13 +237,13 @@ const translations = {
     
     // Hero Section
     hero_badge: "Yapay Zeka Destekli Sağlık",
-    hero_title: "<span>Nörolojik Sağlığı</span> Güçlendiriyoruz",
+    hero_title: "Mobil Oyunlarla <span>Beyin Performansınızı</span> Ölçün ve Geliştirin",
     hero_subtitle: "Nörodejeneratif hastalıklar için geliştirilmiş; önleyici, destekleyici ve yapay zeka tabanlı dijital sağlık çözümlerimizle tanışın ",
     keyword_1: "Bilişsel Ciddi Oyunlar",
     keyword_2: "Yapay Zeka Çözümleri",
     keyword_3: "Dijital Terapötikler",
-    hero_cta_primary: "Çözümlerimizi Keşfedin",
-    hero_cta_secondary: "Bizimle İletişime Geçin",
+    hero_cta_primary: "İlk Deneyen Olmak İster misiniz?",
+    hero_cta_secondary: "E-posta Adresinizi Girin",
     float_card_1: "Gerçek Zamanlı Analiz",
     float_card_2: "Hasta Odaklı",
     
@@ -266,9 +277,20 @@ const translations = {
     feature_6_desc: "Bakım verenler için uygulamamızda dil modeli, blog yazıları ve uzmanlardan seminerler gerçekleştirilecektir.",
     
     // CTA Section
-    cta_title: "Nöro-rehabilitasyon Süreçlerini Dönüştürmeye Hazır mısınız?",
-    cta_subtitle: "Nörodejeneratif rahatsızlıkları olan hastaların yaşam kalitesini artırma vizyonumuza siz de ortak olun. Projemizi yakından tanımak için bizimle iletişime geçin.",
-    cta_button: "Bize Ulaşın",
+    cta_title: "İlk Deneyen Olmak İster misiniz?",
+    cta_subtitle: "NöroNest'i ilk deneyenlerden olun. Erken erişim için e-posta adresinizi girin.",
+    cta_button: "Kayıt Ol",
+    cta_email_placeholder: "E-posta adresinizi girin",
+
+    // How It Works Section
+    how_it_works_title: "Nasıl Çalışır?",
+    how_it_works_subtitle: "Üç basit adımda NöroNest'e başlayın.",
+    step_1_title: "Değerlendiriyoruz",
+    step_1_desc: "Nöroloji kliniklerinde kullanılan bilişsel testlerle beyin sağlığınızın ve becerilerinizin mevcut profilini oluşturuyoruz. Sadece 15 dakika ve tamamen dijital şekilde.",
+    step_2_title: "Çözüm Öneriyoruz",
+    step_2_desc: "Profilinize ve şikayetlerinize göre şekillenecek, nörolog onaylı araştırma destekli egzersiz planı otomatik olarak oluşturulur.",
+    step_3_title: "Kişiselleştiriyoruz",
+    step_3_desc: "Oyun içi performansınıza göre ilerlemenizi ölçüyor ve önerileri gerçek zamanlı şekilde sürekli olarak güncelliyoruz. Siz geliştikçe, NöroNest de sizinle değişir.",
     
     // Footer
     footer_desc: "Daha sağlıklı bir gelecek için yapay zeka destekli nöro-rehabilitasyon çözümleri",
@@ -446,6 +468,14 @@ function setLanguage(lang) {
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
   });
+
+  // Update placeholder translations
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+    const key = element.getAttribute('data-i18n-placeholder');
+    if (translations[lang] && translations[lang][key]) {
+      element.placeholder = translations[lang][key];
+    }
+  });
 }
 
 // Initialize language on page load
@@ -572,6 +602,31 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.disabled = true;
       
       // Reset form
+      setTimeout(() => {
+        this.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }, 3000);
+    });
+  }
+
+  // Early Access Email Form
+  const earlyAccessForm = document.getElementById('earlyAccessForm');
+  
+  if (earlyAccessForm) {
+    earlyAccessForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const email = formData.get('email');
+      
+      console.log('Early access signup:', email);
+      
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = currentLang === 'tr' ? 'Kayıt Olundu!' : 'Signed Up!';
+      submitBtn.disabled = true;
+      
       setTimeout(() => {
         this.reset();
         submitBtn.textContent = originalText;

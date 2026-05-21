@@ -2675,3 +2675,168 @@ section {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===================================
+   How It Works Section
+   =================================== */
+
+.how-it-works-section {
+  background-color: var(--bg-light);
+  padding: var(--section-padding);
+}
+
+.steps-grid {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+}
+
+.step-card {
+  flex: 1;
+  max-width: 340px;
+  background-color: var(--bg-color);
+  padding: 40px 32px;
+  border-radius: var(--radius-large);
+  text-align: center;
+  transition: var(--transition-normal);
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-light);
+  box-shadow: 0 20px 50px var(--shadow-color);
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.step-icon {
+  width: 64px;
+  height: 64px;
+  background-color: var(--bg-light);
+  border-radius: var(--radius-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  border: 1px solid var(--border-color);
+}
+
+.step-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--primary-color);
+}
+
+.step-card h4 {
+  margin-bottom: 12px;
+  color: var(--secondary-color);
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.step-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.step-connector svg {
+  width: 48px;
+  height: 24px;
+  opacity: 0.5;
+}
+
+/* Mobile: stack steps vertically */
+@media (max-width: 768px) {
+  .steps-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .step-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .step-connector {
+    transform: rotate(90deg);
+    width: 60px;
+    height: 40px;
+    margin: 8px 0;
+  }
+}
+
+/* ===================================
+   CTA Email Form
+   =================================== */
+
+.cta-email-form {
+  margin-top: 24px;
+}
+
+.cta-email-input-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.cta-email-input-group input[type="email"] {
+  flex: 1;
+  padding: 14px 24px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-white);
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: var(--transition-normal);
+}
+
+.cta-email-input-group input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cta-email-input-group input[type="email"]:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 480px) {
+  .cta-email-input-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cta-email-input-group input[type="email"] {
+    width: 100%;
+  }
+
+  .cta-email-input-group .btn {
+    width: 100%;
+  }
+}
