@@ -612,26 +612,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Early Access Email Form
   const earlyAccessForm = document.getElementById('earlyAccessForm');
+  const earlyAccessScriptURL = 'https://script.google.com/macros/s/AKfycbwnfCJK2FDWiQdabimOS53gkP_Dom1yr2mmyMB7VAGiPsq9hJNNsnpslrSJFos5CV5L/exec';
   
   if (earlyAccessForm) {
     earlyAccessForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      const formData = new FormData(this);
-      const email = formData.get('email');
-      
-      console.log('Early access signup:', email);
-      
       const submitBtn = this.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
-      submitBtn.textContent = currentLang === 'tr' ? 'Kayıt Olundu!' : 'Signed Up!';
+      
+      // Disable button and show loading state
+      submitBtn.textContent = currentLang === 'tr' ? 'Gönderiliyor...' : 'Sending...';
       submitBtn.disabled = true;
       
-      setTimeout(() => {
-        this.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }, 3000);
+      // Build form data — add a source field so you can distinguish these in the sheet
+      const formData = new FormData(this);
+      formData.append('kaynak', 'early_access_signup');
+      formData.append('bulten', 'Evet');
+      
+      fetch(earlyAccessScriptURL, {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.result === "success") {
+            submitBtn.textContent = currentLang === 'tr' ? 'Kayıt Olundu! ✓' : 'Signed Up! ✓';
+            this.reset();
+            setTimeout(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
+            }, 4000);
+          } else {
+            throw new Error("Server error");
+          }
+        })
+        .catch(error => {
+          console.error('Early access signup error:', error);
+          submitBtn.textContent = currentLang === 'tr' ? 'Hata! Tekrar deneyin' : 'Error! Try again';
+          setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          }, 3000);
+        });
     });
   }
 });
