@@ -622,7 +622,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Early Access Email Form
   const earlyAccessForm = document.getElementById('earlyAccessForm');
-  const earlyAccessScriptURL = 'https://script.google.com/macros/s/AKfycbwnfCJK2FDWiQdabimOS53gkP_Dom1yr2mmyMB7VAGiPsq9hJNNsnpslrSJFos5CV5L/exec';
+  const earlyAccessApiURL = 'https://noronest-python-api-prod.azurewebsites.net/api/v1/subscribers/subscribe';
   
   if (earlyAccessForm) {
     earlyAccessForm.addEventListener('submit', function(e) {
@@ -630,32 +630,35 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const submitBtn = this.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
+      const emailInput = this.querySelector('input[type="email"]');
       
       // Disable button and show loading state
       submitBtn.textContent = currentLang === 'tr' ? 'Gönderiliyor...' : 'Sending...';
       submitBtn.disabled = true;
       
-      // Build form data — add a source field so you can distinguish these in the sheet
-      const formData = new FormData(this);
-      formData.append('kaynak', 'early_access_signup');
-      formData.append('bulten', 'Evet');
+      const emailValue = emailInput.value.trim();
       
-      fetch(earlyAccessScriptURL, {
+      fetch(earlyAccessApiURL, {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: emailValue })
       })
-        .then(response => response.json())
-        .then(data => {
-          if (data.result === "success") {
-            submitBtn.textContent = currentLang === 'tr' ? 'Kayıt Olundu! ✓' : 'Signed Up! ✓';
-            this.reset();
-            setTimeout(() => {
-              submitBtn.textContent = originalText;
-              submitBtn.disabled = false;
-            }, 4000);
-          } else {
+        .then(response => {
+          if (!response.ok && response.status !== 400 && response.status !== 409) {
             throw new Error("Server error");
           }
+          return response.json();
+        })
+        .then(data => {
+          // Both success or "already subscribed" (handled by backend potentially as 400/409) 
+          submitBtn.textContent = currentLang === 'tr' ? 'Kayıt Olundu! ✓' : 'Signed Up! ✓';
+          this.reset();
+          setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          }, 4000);
         })
         .catch(error => {
           console.error('Early access signup error:', error);
