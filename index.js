@@ -592,37 +592,67 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===================================
 
 document.addEventListener('DOMContentLoaded', () => {
+  const API_BASE_URL = 'https://panel.noronest.com';
+  
   const contactForm = document.getElementById('contactForm');
   
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      
+      // Disable button and show loading state
+      submitBtn.textContent = currentLang === 'tr' ? 'Gönderiliyor...' : 'Sending...';
+      submitBtn.disabled = true;
+
       // Get form data
       const formData = new FormData(this);
       const data = Object.fromEntries(formData.entries());
       
-      // Here you would typically send the data to a server
-      console.log('Form submitted:', data);
+      // Map to the expected API format
+      const payload = {
+        firstName: data.firstName || data.firstname || data['first-name'] || '',
+        lastName: data.lastName || data.lastname || data['last-name'] || '',
+        email: data.email || '',
+        company: data.company || '',
+        subject: data.subject || '',
+        message: data.message || ''
+      };
       
-      // Show success message (you can customize this)
-      const submitBtn = this.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = currentLang === 'tr' ? 'Gönderildi!' : 'Sent!';
-      submitBtn.disabled = true;
-      
-      // Reset form
-      setTimeout(() => {
-        this.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }, 3000);
+      fetch(`${API_BASE_URL}/api/contact-messages`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(response => {
+        if (!response.ok) throw new Error("Server error");
+        return response.json();
+      })
+      .then(result => {
+        submitBtn.textContent = currentLang === 'tr' ? 'Gönderildi!' : 'Sent!';
+        setTimeout(() => {
+          this.reset();
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }, 3000);
+      })
+      .catch(error => {
+        console.error('Contact form error:', error);
+        submitBtn.textContent = currentLang === 'tr' ? 'Hata! Tekrar deneyin' : 'Error! Try again';
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }, 3000);
+      });
     });
   }
 
   // Early Access Email Form
   const earlyAccessForm = document.getElementById('earlyAccessForm');
-  const earlyAccessApiURL = 'https://noronest-python-api-prod.azurewebsites.net/api/v1/subscribers/subscribe';
   
   if (earlyAccessForm) {
     earlyAccessForm.addEventListener('submit', function(e) {
@@ -638,7 +668,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const emailValue = emailInput.value.trim();
       
-      fetch(earlyAccessApiURL, {
+      fetch(`${API_BASE_URL}/api/subscribers`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
