@@ -6,7 +6,7 @@ This repository contains the static landing page and informational website for N
 
 - **Responsive Design**: Modern, responsive UI built with semantic HTML5 and vanilla CSS.
 - **Multilingual Support**: Built-in translation system for Turkish (TR) and English (EN) languages (handled in `index.js`).
-- **Early Adopter Signups**: Fully integrated email collection form that posts directly to the live NöroNest Azure backend API (`https://noronest-python-api-prod.azurewebsites.net`).
+- **Early Adopter Signups**: Fully integrated email collection form that posts directly to the central NöroNest Admin API (`https://panel.noronest.com`).
 - **Performance Optimized**: Zero heavy framework dependencies, ensuring maximum performance and SEO.
 
 ## 📁 Structure
@@ -19,8 +19,8 @@ This repository contains the static landing page and informational website for N
 
 ## 🔧 API Integration
 
-The "Early Adopter" sign-up form automatically connects to the NöroNest FastAPI backend. 
-When a user submits their email, it sends a JSON POST request to the `/api/v1/subscribers/subscribe` endpoint, saving the data securely to the Azure SQL Database.
+The "Early Adopter" sign-up form automatically connects to the Next.js `NoroNest-Admin` backend. 
+When a user submits their email, it sends a JSON POST request to the `/api/subscribers` endpoint, saving the data securely to the centralized PostgreSQL Database via Prisma ORM.
 
 ## 🌐 Deployment
 
