@@ -1,4 +1,14 @@
 {
+  "routes": [
+    {
+      "route": "/app/*",
+      "rewrite": "/app/index.html"
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/app/index.html",
+    "exclude": ["/games/*", "/img/*", "/icons/*"]
+  },
   "mimeTypes": {
     ".unityweb": "application/octet-stream"
   }
