@@ -7,7 +7,7 @@
   ],
   "navigationFallback": {
     "rewrite": "/app/index.html",
-    "exclude": ["/games/*", "/img/*", "/icons/*"]
+    "exclude": ["/unitygames/*", "/img/*", "/icons/*"]
   },
   "mimeTypes": {
     ".unityweb": "application/octet-stream"
