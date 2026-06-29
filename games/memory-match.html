@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hafıza Eşleştirme Oyunu - NöroNest</title>
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --secondary: #10b981;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: white;
+            padding: 16px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stats {
+            display: flex;
+            gap: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .stats span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+        }
+
+        .card {
+            background-color: transparent;
+            perspective: 1000px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+        }
+
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            font-size: 32px;
+        }
+
+        .card-front {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+
+        .card-front::after {
+            content: '?';
+            font-size: 28px;
+            font-weight: bold;
+            opacity: 0.8;
+        }
+
+        .card-back {
+            background-color: white;
+            transform: rotateY(180deg);
+            border: 2px solid #e2e8f0;
+        }
+
+        .card.matched .card-inner {
+            transform: rotateY(180deg) scale(0.95);
+            box-shadow: 0 0 0 4px var(--secondary);
+        }
+
+        .card.matched .card-back {
+            background-color: #ecfdf5;
+            border-color: var(--secondary);
+        }
+
+        /* End Screen */
+        .overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .result-card {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 320px;
+            width: 90%;
+            transform: translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .overlay.visible .result-card {
+            transform: translateY(0);
+        }
+
+        .result-title {
+            font-size: 24px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .result-score {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 16px 0;
+        }
+
+        .result-details {
+            color: var(--text-light);
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(139, 92, 246, 0.25);
+            transition: transform 0.1s, background 0.2s;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+            background: var(--primary-dark);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="title">Hafıza Kartları</div>
+        <div class="stats">
+            <span id="moves">Hamle: 0</span>
+            <span id="timer">Süre: 00:00</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="grid" id="grid">
+            <!-- Cards generated by JS -->
+        </div>
+    </main>
+
+    <div class="overlay" id="overlay">
+        <div class="result-card">
+            <div style="font-size: 48px; margin-bottom: 16px;">🎉</div>
+            <h2 class="result-title">Tebrikler!</h2>
+            <p style="color: var(--text-light)">Tüm çiftleri eşleştirdiniz.</p>
+            
+            <div class="result-score" id="final-score">100</div>
+            
+            <div class="result-details">
+                <span id="final-moves">0</span> hamle • <span id="final-time">00:00</span>
+            </div>
+            
+            <button class="btn" onclick="restartGame()">Tekrar Oyna</button>
+        </div>
+    </div>
+
+    <script>
+        const EMOJIS = ['🍎', '🍌', '🍇', '🍉', '🍓', '🥑', '🥕', '🌽'];
+        let cards = [];
+        let flippedCards = [];
+        let matchedPairs = 0;
+        let moves = 0;
+        let timerInterval;
+        let seconds = 0;
+        let gameStarted = false;
+        let isLocked = false;
+
+        const gridElement = document.getElementById('grid');
+        const movesElement = document.getElementById('moves');
+        const timerElement = document.getElementById('timer');
+        const overlay = document.getElementById('overlay');
+
+        function initGame() {
+            // Notify bridge that game started
+            if (window.NöroNestBridge && window.NöroNestBridge.onGameStart) {
+                window.NöroNestBridge.onGameStart('memory-match-1');
+            }
+
+            matchedPairs = 0;
+            moves = 0;
+            seconds = 0;
+            flippedCards = [];
+            gameStarted = false;
+            isLocked = false;
+            updateStats();
+            clearInterval(timerInterval);
+            
+            // Create pairs and shuffle
+            cards = [...EMOJIS, ...EMOJIS]
+                .map(emoji => ({ emoji, id: Math.random() }))
+                .sort((a, b) => a.id - b.id);
+
+            // Render
+            gridElement.innerHTML = '';
+            cards.forEach((card, index) => {
+                const cardEl = document.createElement('div');
+                cardEl.classList.add('card');
+                cardEl.dataset.index = index;
+                
+                cardEl.innerHTML = `
+                    <div class="card-inner">
+                        <div class="card-front"></div>
+                        <div class="card-back">${card.emoji}</div>
+                    </div>
+                `;
+                
+                cardEl.addEventListener('click', () => flipCard(cardEl, index));
+                gridElement.appendChild(cardEl);
+            });
+        }
+
+        function flipCard(cardEl, index) {
+            if (isLocked || cardEl.classList.contains('flipped') || cardEl.classList.contains('matched')) return;
+
+            if (!gameStarted) {
+                gameStarted = true;
+                timerInterval = setInterval(() => {
+                    seconds++;
+                    updateStats();
+                }, 1000);
+            }
+
+            cardEl.classList.add('flipped');
+            flippedCards.push({ el: cardEl, index });
+
+            if (flippedCards.length === 2) {
+                moves++;
+                updateStats();
+                checkForMatch();
+            }
+        }
+
+        function checkForMatch() {
+            isLocked = true;
+            const [card1, card2] = flippedCards;
+            const match = cards[card1.index].emoji === cards[card2.index].emoji;
+
+            if (match) {
+                setTimeout(() => {
+                    card1.el.classList.add('matched');
+                    card2.el.classList.add('matched');
+                    matchedPairs++;
+                    if (matchedPairs === EMOJIS.length) {
+                        endGame();
+                    }
+                    resetBoard();
+                }, 400);
+            } else {
+                setTimeout(() => {
+                    card1.el.classList.remove('flipped');
+                    card2.el.classList.remove('flipped');
+                    resetBoard();
+                }, 1000);
+            }
+        }
+
+        function resetBoard() {
+            flippedCards = [];
+            isLocked = false;
+        }
+
+        function formatTime(sec) {
+            const m = Math.floor(sec / 60).toString().padStart(2, '0');
+            const s = (sec % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+        }
+
+        function updateStats() {
+            movesElement.innerText = `Hamle: ${moves}`;
+            timerElement.innerText = `Süre: ${formatTime(seconds)}`;
+            
+            // Progress update for bridge
+            if (window.NöroNestBridge && window.NöroNestBridge.onProgressUpdate) {
+                const progress = matchedPairs / EMOJIS.length;
+                window.NöroNestBridge.onProgressUpdate('memory-match-1', progress, calculateScore());
+            }
+        }
+
+        function calculateScore() {
+            // Base 100, -2 for each move over ideal (16 moves ideal), -1 for each 5 seconds over 30s
+            let score = 100;
+            const extraMoves = Math.max(0, moves - EMOJIS.length);
+            const extraTime = Math.max(0, Math.floor((seconds - 30) / 5));
+            
+            score -= (extraMoves * 2);
+            score -= extraTime;
+            
+            return Math.max(10, score); // Min score 10
+        }
+
+        function endGame() {
+            clearInterval(timerInterval);
+            const score = calculateScore();
+            
+            setTimeout(() => {
+                document.getElementById('final-score').innerText = score;
+                document.getElementById('final-moves').innerText = moves;
+                document.getElementById('final-time').innerText = formatTime(seconds);
+                overlay.classList.add('visible');
+                
+                // Notify NöroNest Mobile App
+                if (window.NöroNestBridge && window.NöroNestBridge.onGameEnd) {
+                    window.NöroNestBridge.onGameEnd('memory-match-1', score, 1, 'completed', seconds);
+                }
+            }, 600);
+        }
+
+        function restartGame() {
+            overlay.classList.remove('visible');
+            setTimeout(initGame, 400);
+        }
+
+        // Init on load
+        window.onload = initGame;
+    </script>
+</body>
+</html>
