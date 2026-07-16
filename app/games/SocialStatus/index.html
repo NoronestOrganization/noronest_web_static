@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity Web Player | AlzheimerApp</title>
+  </head>
+  <body style="text-align: center; padding: 0; border: 0; margin: 0;">
+    <canvas id="unity-canvas" width=720 height=1050 tabindex="-1" style="width: 720px; height: 1050px; background: #231F20"></canvas>
+    <script src="Build/SocialStatus.loader.js"></script>
+    <script>
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+
+        var canvas = document.querySelector("#unity-canvas");
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+        canvas.style.position = "fixed";
+
+        document.body.style.textAlign = "left";
+
+      }
+
+      
+      // ADD LOADING UI
+      var loadingContainer = document.createElement('div');
+      loadingContainer.style.position = 'absolute';
+      loadingContainer.style.top = '0';
+      loadingContainer.style.left = '0';
+      loadingContainer.style.width = '100%';
+      loadingContainer.style.height = '100%';
+      loadingContainer.style.backgroundColor = '#0f172a';
+      loadingContainer.style.display = 'flex';
+      loadingContainer.style.flexDirection = 'column';
+      loadingContainer.style.alignItems = 'center';
+      loadingContainer.style.justifyContent = 'center';
+      loadingContainer.style.zIndex = '9999';
+
+      var loadingText = document.createElement('div');
+      loadingText.innerText = 'Oyun Yükleniyor...';
+      loadingText.style.color = '#fff';
+      loadingText.style.fontFamily = 'sans-serif';
+      loadingText.style.fontSize = '24px';
+      loadingText.style.marginBottom = '20px';
+      
+      var barContainer = document.createElement('div');
+      barContainer.style.width = '200px';
+      barContainer.style.height = '10px';
+      barContainer.style.backgroundColor = 'rgba(255,255,255,0.2)';
+      barContainer.style.borderRadius = '5px';
+      barContainer.style.overflow = 'hidden';
+
+      var barFill = document.createElement('div');
+      barFill.style.width = '0%';
+      barFill.style.height = '100%';
+      barFill.style.backgroundColor = '#8b5cf6';
+      barFill.style.transition = 'width 0.2s';
+
+      barContainer.appendChild(barFill);
+      loadingContainer.appendChild(loadingText);
+      loadingContainer.appendChild(barContainer);
+      document.body.appendChild(loadingContainer);
+
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        arguments: [],
+        dataUrl: "Build/SocialStatus.data.unityweb",
+        frameworkUrl: "Build/SocialStatus.framework.js.unityweb",
+        codeUrl: "Build/SocialStatus.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Noro",
+        productName: "AlzheimerApp",
+        productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      }, (progress) => {
+          barFill.style.width = 100 * progress + "%";
+      }).then((unityInstance) => {
+          loadingContainer.style.display = 'none';
+          window.parent.postMessage(JSON.stringify({ type: 'GAME_START' }), '*');
+      }).catch((message) => {
+        alert(message);
+      });
+    </script>
+  </body>
+</html>

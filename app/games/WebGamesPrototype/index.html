@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NöroNest Oyun Platformu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- HEADER -->
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🧠</span> NöroNest
+            </div>
+            <div class="user-profile">
+                <div class="avatar">👦</div>
+                <span class="coins">⭐ <span id="global-score">120</span></span>
+            </div>
+        </header>
+
+        <!-- MAIN MENU -->
+        <main id="main-menu">
+            <div class="hero-section">
+                <h1>Merhaba! <br><span>Bugün ne oynamak istersin?</span></h1>
+            </div>
+
+            <div class="categories">
+                <!-- Kategori 1 -->
+                <div class="category-section">
+                    <h2 class="category-title">🧺 Günlük Yaşam Becerileri</h2>
+                    <div class="games-grid">
+                        <div class="game-card" onclick="startGame('laundry')">
+                            <div class="game-icon bg-gradient-1">👕</div>
+                            <div class="game-info">
+                                <h3>Çamaşır Macerası</h3>
+                                <p>Renklileri ve beyazları ayıralım!</p>
+                            </div>
+                            <button class="play-btn">Oyna</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kategori 2 -->
+                <div class="category-section">
+                    <h2 class="category-title">🎯 Odak ve Koordinasyon</h2>
+                    <div class="games-grid">
+                        <div class="game-card" onclick="startGame('rhythm')">
+                            <div class="game-icon bg-gradient-2">🎵</div>
+                            <div class="game-info">
+                                <h3>Ritim Gezegeni</h3>
+                                <p>Seslere kulak ver, ritmi yakala!</p>
+                            </div>
+                            <button class="play-btn">Oyna</button>
+                        </div>
+                        <div class="game-card" onclick="startGame('archery')">
+                            <div class="game-icon bg-gradient-3">🏹</div>
+                            <div class="game-info">
+                                <h3>Okçu Kahraman</h3>
+                                <p>Hedefe odaklan ve tam on ikiden vur.</p>
+                            </div>
+                            <button class="play-btn">Oyna</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kategori 3 -->
+                <div class="category-section">
+                    <h2 class="category-title">🧩 Hafıza ve Zeka</h2>
+                    <div class="games-grid">
+                        <div class="game-card" onclick="startGame('room')">
+                            <div class="game-icon bg-gradient-4">🚪</div>
+                            <div class="game-info">
+                                <h3>Gizemli Oda</h3>
+                                <p>Odadaki eşyaları hatırla.</p>
+                            </div>
+                            <button class="play-btn">Oyna</button>
+                        </div>
+                        <div class="game-card" onclick="startGame('word')">
+                            <div class="game-icon bg-gradient-1">🔤</div>
+                            <div class="game-info">
+                                <h3>Kelime Avcısı</h3>
+                                <p>Harfleri birleştir, gizli kelimeleri bul.</p>
+                            </div>
+                            <button class="play-btn">Oyna</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kategori 4 -->
+                <div class="category-section">
+                    <h2 class="category-title">🤝 Duygu ve Sosyal Keşif</h2>
+                    <div class="games-grid">
+                        <div class="game-card" onclick="startGame('emotion')">
+                            <div class="game-icon bg-gradient-2">😊</div>
+                            <div class="game-info">
+                                <h3>Duygu Aynası</h3>
+                                <p>Yüz ifadelerini ve duyguları tanı.</p>
+                            </div>
+                            <button class="play-btn">Oyna</button>
+                        </div>
+                        <div class="game-card" onclick="startGame('emotionchain')">
+                            <div class="game-icon bg-gradient-3">🔗</div>
+                            <div class="game-info">
+                                <h3>Hislerin Yolu</h3>
+                                <p>Olaylar ve duygular arası bağlantı kur.</p>
+                            </div>
+                            <button class="play-btn">Oyna</button>
+                        </div>
+                        <div class="game-card" onclick="startGame('socialstatus')">
+                            <div class="game-icon bg-gradient-4">🕵️</div>
+                            <div class="game-info">
+                                <h3>Durum Dedektifi</h3>
+                                <p>Farklı durumlarda hisleri tahmin et.</p>
+                            </div>
+                            <button class="play-btn">Oyna</button>
+                        </div>
+                        <div class="game-card" onclick="startGame('socialblunder')">
+                            <div class="game-icon bg-gradient-1">💬</div>
+                            <div class="game-info">
+                                <h3>Doğrusu Ne?</h3>
+                                <p>Sosyal durumlardaki en doğru tepkiyi bul.</p>
+                            </div>
+                            <button class="play-btn">Oyna</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- GAME CONTAINER -->
+        <section id="game-container" class="hidden">
+            <button class="back-btn" onclick="backToMenu()">⬅ Menüye Dön</button>
+            <div class="game-header">
+                <h2 id="current-game-title">Oyun Başlığı</h2>
+                <p id="current-game-desc">Oyun Açıklaması</p>
+            </div>
+            
+            <div class="score-board">Skor: <span id="score">0</span></div>
+
+            <div class="game-area" id="dynamic-game-area">
+                <!-- Dinamik oyun içeriği buraya gelecek -->
+            </div>
+
+            <!-- Win Overlay -->
+            <div id="win-overlay" class="hidden">
+                <div class="win-modal">
+                    <h1>Tebrikler! 🎉</h1>
+                    <p id="win-message">Harika bir iş çıkardın!</p>
+                    <div class="stars">⭐⭐⭐</div>
+                    <button class="primary-btn" onclick="backToMenu()">Menüye Dön</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Confetti Script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

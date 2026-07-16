@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Stroop Testi - NöroNest</title>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --bg-color: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: white;
+            padding: 16px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stats {
+            display: flex;
+            gap: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .instruction {
+            font-size: 16px;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 320px;
+            line-height: 1.5;
+        }
+
+        .word-display {
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            width: 100%;
+            max-width: 340px;
+        }
+
+        .color-btn {
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.1s, opacity 0.2s;
+            text-transform: uppercase;
+        }
+
+        .color-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* End Screen Overlay */
+        .overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .result-card {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 320px;
+            width: 90%;
+            transform: translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .overlay.visible .result-card {
+            transform: translateY(0);
+        }
+
+        .result-title {
+            font-size: 24px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .result-score {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 16px 0;
+        }
+
+        .result-details {
+            color: var(--text-light);
+            margin-bottom: 24px;
+            line-height: 1.5;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .detail-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .detail-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25);
+            transition: transform 0.1s;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        #feedback {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+            opacity: 0;
+            transition: opacity 0.2s, transform 0.2s;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="title">Stroop Testi</div>
+        <div class="stats">
+            <span id="score-display">Puan: 0</span>
+            <span id="progress-display">1/20</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="instruction">
+            Lütfen kelimenin ne anlama geldiğine <b>değil</b>, kelimenin <b style="color:var(--primary)">YAZILDIĞI RENGE</b> tıklayın!
+        </div>
+
+        <div id="word" class="word-display">BAŞLA</div>
+
+        <div class="buttons" id="buttons-container">
+            <!-- Buttons generated dynamically -->
+        </div>
+
+        <div id="feedback">✔️</div>
+    </main>
+
+    <div class="overlay" id="overlay">
+        <div class="result-card">
+            <div style="font-size: 48px; margin-bottom: 16px;">🧠</div>
+            <h2 class="result-title">Test Tamamlandı</h2>
+            
+            <div class="result-score" id="final-score">100</div>
+            
+            <div class="result-details">
+                <div class="detail-item">
+                    <span class="detail-value" id="final-correct">0</span>
+                    <span class="detail-label">Doğru</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-value" id="final-wrong">0</span>
+                    <span class="detail-label">Yanlış</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-value" id="final-time">0s</span>
+                    <span class="detail-label">Süre</span>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="restartGame()">Tekrar Oyna</button>
+        </div>
+    </div>
+
+    <script>
+        const COLORS = [
+            { name: 'KIRMIZI', hex: '#ef4444' },
+            { name: 'MAVİ', hex: '#3b82f6' },
+            { name: 'YEŞİL', hex: '#10b981' },
+            { name: 'SARI', hex: '#eab308' }
+        ];
+
+        const TOTAL_ROUNDS = 20;
+        let currentRound = 0;
+        let score = 0;
+        let correctAnswers = 0;
+        let wrongAnswers = 0;
+        let startTime = 0;
+        let totalTime = 0;
+        let currentColorHex = '';
+        let timerInterval;
+
+        const wordEl = document.getElementById('word');
+        const buttonsContainer = document.getElementById('buttons-container');
+        const scoreDisplay = document.getElementById('score-display');
+        const progressDisplay = document.getElementById('progress-display');
+        const feedbackEl = document.getElementById('feedback');
+        const overlay = document.getElementById('overlay');
+
+        function initGame() {
+            if (window.NöroNestBridge && window.NöroNestBridge.onGameStart) {
+                window.NöroNestBridge.onGameStart('stroop-test-1');
+            }
+
+            currentRound = 0;
+            score = 0;
+            correctAnswers = 0;
+            wrongAnswers = 0;
+            totalTime = 0;
+            updateUI();
+            
+            // Create static buttons
+            buttonsContainer.innerHTML = '';
+            COLORS.forEach(color => {
+                const btn = document.createElement('button');
+                btn.className = 'color-btn';
+                btn.style.backgroundColor = color.hex;
+                btn.innerText = color.name;
+                btn.onclick = () => handleAnswer(color.hex);
+                buttonsContainer.appendChild(btn);
+            });
+
+            startTime = Date.now();
+            timerInterval = setInterval(() => {
+                totalTime = Math.floor((Date.now() - startTime) / 1000);
+            }, 1000);
+
+            nextRound();
+        }
+
+        function nextRound() {
+            currentRound++;
+            if (currentRound > TOTAL_ROUNDS) {
+                endGame();
+                return;
+            }
+
+            updateUI();
+
+            // Pick random word and random color
+            const wordObj = COLORS[Math.floor(Math.random() * COLORS.length)];
+            const colorObj = COLORS[Math.floor(Math.random() * COLORS.length)];
+
+            wordEl.innerText = wordObj.name;
+            wordEl.style.color = colorObj.hex;
+            currentColorHex = colorObj.hex;
+        }
+
+        function handleAnswer(selectedHex) {
+            if (currentRound > TOTAL_ROUNDS) return;
+
+            const isCorrect = selectedHex === currentColorHex;
+            
+            if (isCorrect) {
+                correctAnswers++;
+                score += 5;
+                showFeedback('✔️', '#10b981');
+            } else {
+                wrongAnswers++;
+                score -= 2;
+                showFeedback('❌', '#ef4444');
+            }
+
+            // Small delay before next round
+            wordEl.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                wordEl.style.transform = 'scale(1)';
+                nextRound();
+            }, 150);
+        }
+
+        function showFeedback(icon, color) {
+            feedbackEl.innerText = icon;
+            feedbackEl.style.color = color;
+            feedbackEl.style.opacity = '1';
+            feedbackEl.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            
+            setTimeout(() => {
+                feedbackEl.style.opacity = '0';
+                feedbackEl.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 300);
+        }
+
+        function updateUI() {
+            scoreDisplay.innerText = `Puan: ${Math.max(0, score)}`;
+            progressDisplay.innerText = `${Math.min(currentRound, TOTAL_ROUNDS)}/${TOTAL_ROUNDS}`;
+            
+            if (window.NöroNestBridge && window.NöroNestBridge.onProgressUpdate) {
+                const progress = currentRound / TOTAL_ROUNDS;
+                window.NöroNestBridge.onProgressUpdate('stroop-test-1', progress, Math.max(0, score));
+            }
+        }
+
+        function calculateFinalScore() {
+            // Max score = 100 (20 * 5)
+            // Time penalty: -1 point for every second over 15 seconds
+            let finalScore = score;
+            const timePenalty = Math.max(0, totalTime - 15);
+            finalScore -= timePenalty;
+            
+            return Math.max(0, Math.min(100, finalScore));
+        }
+
+        function endGame() {
+            clearInterval(timerInterval);
+            const finalScore = calculateFinalScore();
+            
+            document.getElementById('final-score').innerText = finalScore;
+            document.getElementById('final-correct').innerText = correctAnswers;
+            document.getElementById('final-wrong').innerText = wrongAnswers;
+            document.getElementById('final-time').innerText = totalTime + 's';
+            
+            overlay.classList.add('visible');
+            
+            if (window.NöroNestBridge && window.NöroNestBridge.onGameEnd) {
+                window.NöroNestBridge.onGameEnd('stroop-test-1', finalScore, 1, 'completed', totalTime);
+            }
+        }
+
+        function restartGame() {
+            overlay.classList.remove('visible');
+            setTimeout(initGame, 300);
+        }
+
+        // Click to start
+        wordEl.onclick = () => {
+            if (currentRound === 0) {
+                initGame();
+            }
+        };
+
+        // Init
+        wordEl.innerText = "BAŞLA";
+        wordEl.style.color = "var(--text-dark)";
+        buttonsContainer.innerHTML = '<p style="color:var(--text-light); text-align:center; width: 100%; grid-column: span 2;">Başlamak için BAŞLA yazısına tıklayın.</p>';
+
+    </script>
+</body>
+</html>
