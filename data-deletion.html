@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veri Silme Talebi | NöroNest</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; line-height: 1.6; }
+    .container-box { max-width: 800px; margin: 60px auto; padding: 40px; background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+    h1 { color: #0f172a; margin-bottom: 24px; text-align: center; }
+    h2 { color: #334155; margin-top: 32px; margin-bottom: 16px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; }
+    p { margin-bottom: 16px; }
+    ul { padding-left: 20px; margin-bottom: 24px; }
+    li { margin-bottom: 8px; }
+    .back-link { display: inline-block; margin-bottom: 24px; color: #3b82f6; text-decoration: none; font-weight: 600; }
+    .back-link:hover { text-decoration: underline; }
+    .highlight-box { background-color: #f0fdf4; border-left: 4px solid #22c55e; padding: 16px; margin: 24px 0; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div class="container-box">
+    <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+    
+    <h1>NöroNest Kullanıcı Verisi Silme Talebi</h1>
+    
+    <p><strong>NöroNest</strong> uygulamasını veya web platformumuzu kullanan tüm üyelerimiz, hesaplarına ve kişisel verilerine ait bilgilerin sistemlerimizden kalıcı olarak silinmesini talep etme hakkına sahiptir.</p>
+
+    <h2>Veri Silme İşlemi İçin İzlenmesi Gereken Adımlar</h2>
+    <div class="highlight-box">
+      <strong>Yöntem 1 (Uygulama İçi):</strong>
+      <ol style="margin-top: 8px; margin-bottom: 0;">
+        <li>NöroNest mobil uygulamasına veya web portalına giriş yapın.</li>
+        <li>Sağ üst menüden veya alt navigasyondan <strong>"Profil"</strong> bölümüne gidin.</li>
+        <li>Sayfanın en altındaki <strong>"Hesabımı Sil"</strong> butonuna tıklayın.</li>
+        <li>Ekrana gelen onay uyarılarını okuyup işlemi onaylayın. Verileriniz sistem tarafından otomatik olarak anonimleştirilme ve silinme sürecine girecektir.</li>
+      </ol>
+    </div>
+
+    <div class="highlight-box" style="background-color: #f8fafc; border-left-color: #3b82f6;">
+      <strong>Yöntem 2 (E-posta ile Talep):</strong>
+      <p style="margin-top: 8px; margin-bottom: 0;">
+        Uygulamaya erişiminiz yoksa, doğrudan <strong>privacy@noronest.com</strong> adresine NöroNest'e kayıtlı olduğunuz e-posta adresinizden "Hesap ve Veri Silme Talebi" başlıklı bir e-posta göndererek verilerinizin silinmesini talep edebilirsiniz. Talebiniz en geç 7 iş günü içerisinde yerine getirilecektir.
+      </p>
+    </div>
+
+    <h2>Hangi Veriler Silinir?</h2>
+    <p>Silme talebiniz onaylandığında şu verileriniz kalıcı olarak silinir:</p>
+    <ul>
+      <li><strong>Kişisel Tanımlayıcı Veriler:</strong> Adınız, soyadınız, e-posta adresiniz ve telefon numaranız.</li>
+      <li><strong>Sağlık ve Tıbbi Kayıtlar:</strong> İlaç programlarınız, ruh hali (mood) girişleriniz, doktor randevularınız ve günlük aktiviteleriniz.</li>
+      <li><strong>Oyun ve Test Verileri:</strong> Oynadığınız oyunların oturum logları ve klinik test (MoCA, MMSE vb.) sonuçlarınız.</li>
+      <li><strong>Cihaz Bilgileri:</strong> Anlık bildirim (Push Notification) tokenlarınız ve oturum (JWT) çerezleriniz.</li>
+    </ul>
+
+    <h2>Hangi Veriler Saklanır ve Ne Kadar Süreyle?</h2>
+    <p>Sistem ve veri bütünlüğünü sağlamak veya yasal zorunlulukları yerine getirmek adına bazı verileriniz belirli bir süreyle anonim olarak saklanabilir:</p>
+    <ul>
+      <li><strong>Anonim İstatistikler:</strong> Yaş grubu, cinsiyet ve hastalık evresi gibi veriler <em>tamamen kimliksizleştirilerek</em> (hiçbir şekilde sizinle ilişkilendirilemeyecek şekilde) bilimsel AI algoritmalarımızın eğitimi için belirsiz süreyle tutulabilir.</li>
+      <li><strong>Sistem Logları (Audit Logs):</strong> Olası kötüye kullanım veya güvenlik ihlallerini geriye dönük inceleyebilmek amacıyla, IP adresiniz ve temel güvenlik loglarınız yasal mevzuat gereği <strong>1 yıl süreyle</strong> şifrelenmiş (encrypted) olarak arşivlenir. 1 yılın sonunda otomatik olarak yok edilir.</li>
+    </ul>
+
+    <p style="margin-top: 40px; font-size: 0.875rem; color: #64748b; text-align: center;">Son Güncelleme: 16 Temmuz 2026 | NöroNest Geliştirici Ekibi</p>
+  </div>
+</body>
+</html>
