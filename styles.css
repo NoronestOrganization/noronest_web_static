@@ -2942,27 +2942,44 @@ section {
   font-weight: 600;
   color: var(--secondary-color);
 }
+
+
 .award-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 0 !important;
+  overflow: hidden;
 }
 
 .award-logo-wrapper {
-  height: 90px;
+  height: 140px;
+  width: 100%;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  overflow: hidden;
 }
 
 .award-logo {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.3s ease;
+}
+
+/* Specific fix for Biruni to not crop since it's square */
+a[href*="biruniteknopark"] .award-logo {
+  object-fit: contain;
+  padding: 15px;
+}
+
+.award-content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
 }
 
 .award-card:hover .award-logo {
