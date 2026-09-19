@@ -225,22 +225,48 @@
       });
     }
 
-    function init() {
+    const API_BASE = 'https://noronest-web-api.azurewebsites.net/api/v1';
+
+    async function init() {
       const params = new URLSearchParams(window.location.search);
       const articleId = parseInt(params.get('id'));
-      if (!articleId || typeof ARTICLES_DATA === 'undefined') {
+      if (!articleId) {
         window.location.href = 'index.html';
         return;
       }
 
-      const article = ARTICLES_DATA.find(a => a.id === articleId);
+      let article = null;
+      try {
+        const res = await fetch(`${API_BASE}/articles/${articleId}`);
+        if (!res.ok) throw new Error('Not found');
+        article = await res.json();
+      } catch (err) {
+        console.error('Error fetching article:', err);
+        if (typeof ARTICLES_DATA !== 'undefined') {
+          article = ARTICLES_DATA.find(a => a.id === articleId);
+        }
+      }
+
       if (!article) {
         window.location.href = 'index.html';
         return;
       }
 
+      // Fetch all articles for sidebar
+      let allArticles = [];
+      try {
+        const resList = await fetch(`${API_BASE}/articles/?status=published`);
+        if (resList.ok) {
+          allArticles = await resList.json();
+        } else {
+          allArticles = typeof ARTICLES_DATA !== 'undefined' ? ARTICLES_DATA : [];
+        }
+      } catch {
+        allArticles = typeof ARTICLES_DATA !== 'undefined' ? ARTICLES_DATA : [];
+      }
+
       renderArticle(article);
-      renderSidebar(article);
+      renderSidebar(article, allArticles);
 
       // Update page title
       document.title = `${article.title} - NöroNest`;
@@ -292,16 +318,16 @@
       `;
     }
 
-    function renderSidebar(currentArticle) {
+    function renderSidebar(currentArticle, allArticles) {
       const lang = localStorage.getItem('language') || 'en';
       const readLabel = lang === 'tr' ? 'dk okuma' : 'min read';
       const sidebarTitle = lang === 'tr' ? 'Diğer Makaleler' : 'Recommended';
 
       // Get 4 recommended articles (same category first, then others)
-      const sameCategory = ARTICLES_DATA.filter(a => 
+      const sameCategory = allArticles.filter(a => 
         a.id !== currentArticle.id && a.content && a.content.length > 0 && a.category === currentArticle.category
       );
-      const others = ARTICLES_DATA.filter(a => 
+      const others = allArticles.filter(a => 
         a.id !== currentArticle.id && a.content && a.content.length > 0 && a.category !== currentArticle.category
       );
       const recommended = [...sameCategory, ...others].slice(0, 4);
