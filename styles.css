@@ -2925,7 +2925,7 @@ section {
   color: var(--text-light);
 }
 .supporter-item img {
-  max-height: 50px;
+  max-height: 75px;
   width: auto;
   filter: grayscale(100%);
   opacity: 0.7;
