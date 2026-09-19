@@ -3,11 +3,25 @@
     {
       "route": "/app/*",
       "rewrite": "/app/index.html"
+    },
+    {
+      "route": "/games/*.unityweb",
+      "headers": {
+        "Content-Encoding": "br",
+        "Content-Type": "application/octet-stream"
+      }
+    },
+    {
+      "route": "/unitygames/*.unityweb",
+      "headers": {
+        "Content-Encoding": "br",
+        "Content-Type": "application/octet-stream"
+      }
     }
   ],
   "navigationFallback": {
     "rewrite": "/app/index.html",
-    "exclude": ["/unitygames/*", "/img/*", "/icons/*"]
+    "exclude": ["/unitygames/*", "/img/*", "/icons/*", "/games/*"]
   },
   "mimeTypes": {
     ".unityweb": "application/octet-stream"
