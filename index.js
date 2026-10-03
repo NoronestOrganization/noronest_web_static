@@ -668,7 +668,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const emailValue = emailInput.value.trim();
       
-      fetch(`${API_BASE_URL}/api/subscribers`, {
+      fetch(`https://noronest-mobile-api.azurewebsites.net/api/subscribers`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
