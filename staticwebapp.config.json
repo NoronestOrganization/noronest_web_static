@@ -7,6 +7,12 @@
       }
     },
     {
+      "route": "/doktor/*.png",
+      "headers": {
+        "Cache-Control": "public, max-age=86400"
+      }
+    },
+    {
       "route": "/doktor",
       "rewrite": "/doktor/index.html"
     },
@@ -35,7 +41,7 @@
   ],
   "navigationFallback": {
     "rewrite": "/app/index.html",
-    "exclude": ["/unitygames/*", "/img/*", "/icons/*", "/games/*", "/doktor/*", "/public/*"]
+    "exclude": ["/unitygames/*", "/img/*", "/icons/*", "/games/*", "/doktor/*", "/public/*", "/*.png"]
   },
   "mimeTypes": {
     ".unityweb": "application/octet-stream"
