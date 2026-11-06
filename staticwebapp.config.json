@@ -21,6 +21,35 @@
       "rewrite": "/doktor/index.html"
     },
     {
+      "route": "/app/_expo/*",
+      "headers": {
+        "Cache-Control": "public, max-age=86400"
+      }
+    },
+    {
+      "route": "/app/assets/*",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "route": "/app/games/*.unityweb",
+      "headers": {
+        "Content-Encoding": "br",
+        "Content-Type": "application/octet-stream"
+      }
+    },
+    {
+      "route": "/app/games/*"
+    },
+    {
+      "route": "/app/favicon.ico"
+    },
+    {
+      "route": "/app",
+      "rewrite": "/app/index.html"
+    },
+    {
       "route": "/app/*",
       "rewrite": "/app/index.html"
     },
@@ -41,7 +70,7 @@
   ],
   "navigationFallback": {
     "rewrite": "/app/index.html",
-    "exclude": ["/unitygames/*", "/img/*", "/icons/*", "/games/*", "/doktor/*", "/public/*", "/*.png"]
+    "exclude": ["/unitygames/*", "/img/*", "/icons/*", "/games/*", "/doktor/*", "/app/*", "/public/*", "/*.png"]
   },
   "mimeTypes": {
     ".unityweb": "application/octet-stream"
